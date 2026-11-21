@@ -31,6 +31,12 @@
     var t = document.createElement("span");
     t.textContent = title;
     a.appendChild(t);
+    if (ch.querySelector(".game")) {
+      var mark = document.createElement("span");
+      mark.className = "play-mark";
+      mark.textContent = "▶";
+      a.appendChild(mark);
+    }
     nav.appendChild(a);
     links[ch.id] = a;
 
@@ -56,6 +62,7 @@
     window.scrollTo(0, 0);
     if (links[id].scrollIntoView) links[id].scrollIntoView({ block: "nearest" });
     document.title = document.getElementById(id).getAttribute("data-title") + " | 경제·금융 기초와 네오뱅크";
+    document.dispatchEvent(new CustomEvent("chapter:show", { detail: { id: id } }));
   }
 
   function move(step) {

@@ -1,0 +1,130 @@
+/* 돈 찍어내기 */
+.g-printer .pr-wrap { display: grid; gap: 16px; }
+.g-printer .pr-wrap > * { min-width: 0; }
+.g-printer .pr-grid { display: flex; flex-wrap: wrap; gap: 14px; align-items: stretch; }
+.g-printer .pr-panel { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 12px; background: var(--bg); border-radius: 18px; padding: 14px 14px 16px; }
+.g-printer .pr-cap { font-size: 17px; font-weight: 800; line-height: 1.4; }
+
+/* 값 상자 */
+.g-printer .pr-box { position: relative; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px 12px; transition: background 0.3s, border-color 0.3s; }
+.g-printer .pr-box > span { display: block; font-size: 15px; font-weight: 700; color: var(--sub); line-height: 1.5; }
+.g-printer .pr-box > b { display: block; font-size: 30px; font-weight: 800; line-height: 1.25; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+.g-printer .pr-box > small { display: block; font-size: 15px; font-weight: 600; color: var(--sub); line-height: 1.5; }
+.g-printer .pr-price > b { font-size: 46px; line-height: 1.15; transition: color 0.3s; }
+.g-printer .pr-price.warm { background: #fff6f6; border-color: #f6c5c7; }
+.g-printer .pr-price.hot { background: #ffecec; border-color: var(--red); }
+.g-printer .pr-price.hot > b { animation: gm-pulse 0.9s ease-in-out infinite; transform-origin: left center; }
+
+/* 돈 찍기 */
+.g-printer .pr-press { position: relative; display: flex; justify-content: center; padding: 8px 0 12px; }
+.g-printer .pr-mint {
+  appearance: none; position: relative; z-index: 2; width: 150px; height: 150px; border: 0; border-radius: 50%; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.25; color: #fff; font: inherit;
+  background: radial-gradient(circle at 35% 26%, #6cc0ff, var(--blue) 56%, #0068c0);
+  box-shadow: 0 8px 0 #00559f, 0 16px 26px rgba(0, 104, 192, 0.35);
+  touch-action: manipulation; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent;
+  transition: transform 0.07s, box-shadow 0.07s;
+}
+.g-printer .pr-mint b { font-size: 26px; font-weight: 800; }
+.g-printer .pr-mint small { font-size: 17px; font-weight: 700; opacity: 0.95; }
+.g-printer .pr-mint:active { transform: translateY(6px); box-shadow: 0 2px 0 #00559f, 0 6px 12px rgba(0, 104, 192, 0.3); }
+.g-printer .pr-mint:focus-visible { outline: 3px solid #0b4f8a; outline-offset: 4px; }
+.g-printer .pr-mint:disabled { filter: grayscale(0.8); opacity: 0.55; cursor: not-allowed; transform: none; }
+.g-printer .pr-press .gm-float { z-index: 3; }
+
+/* 날아가는 지폐 */
+.g-printer .pr-bill {
+  position: absolute; left: 50%; top: 46%; z-index: 1; width: 48px; height: 27px; border-radius: 5px; pointer-events: none;
+  background: linear-gradient(135deg, #d3f3dd, #8fd6a8); border: 2px solid #2f9a55;
+  animation: g-printer-bill 0.75s ease-out forwards;
+}
+.g-printer .pr-bill::after { content: ""; position: absolute; left: 50%; top: 50%; width: 11px; height: 11px; margin: -7.5px 0 0 -7.5px; border: 2px solid #2f9a55; border-radius: 50%; }
+
+/* 인쇄기 */
+.g-printer .pr-machbox { min-height: 62px; }
+.g-printer .pr-machs { display: flex; flex-wrap: wrap; gap: 4px 8px; }
+.g-printer .pr-mach { position: relative; font-style: normal; font-size: 28px; line-height: 1.25; animation: gm-pop 0.32s ease-out; }
+.g-printer .pr-mach::after {
+  content: ""; position: absolute; left: 50%; bottom: 0; width: 14px; height: 8px; margin-left: -7px; border-radius: 2px;
+  background: #8fd6a8; border: 1.5px solid #2f9a55; animation: g-printer-slip 1s linear infinite;
+}
+.g-printer .pr-wrap.over .pr-mach::after { animation: none; opacity: 0; }
+.g-printer .pr-machtext { font-size: 15px; font-weight: 600; color: var(--sub); line-height: 1.5; }
+
+/* 단추 */
+.g-printer .pr-acts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+.g-printer .pr-act { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; width: 100%; padding: 10px 8px; line-height: 1.35; text-align: center; }
+.g-printer .pr-act b { font-size: 17px; font-weight: 800; }
+.g-printer .pr-act small { font-size: 15px; font-weight: 600; opacity: 0.92; }
+.g-printer .pr-rule { margin: 0; font-size: 15px; line-height: 1.5; color: var(--sub); }
+
+/* 빵값 꺾은선 */
+.g-printer .pr-spark { margin-top: 6px; }
+.g-printer .pr-sp-plot svg { display: block; width: 100%; height: auto; overflow: visible; touch-action: pan-y; }
+.g-printer .pr-sp-base { stroke: var(--line); stroke-width: 1; }
+.g-printer .pr-sp-ref { stroke: #8b94a1; stroke-width: 1; stroke-dasharray: 3 3; }
+.g-printer .pr-sp-area { fill: var(--blue); opacity: 0.1; }
+.g-printer .pr-sp-line { fill: none; stroke: var(--blue); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+.g-printer .pr-sp-cross { stroke: #5b6470; stroke-width: 1; visibility: hidden; }
+.g-printer .pr-sp-dot { fill: var(--blue); stroke: #fff; stroke-width: 2; }
+.g-printer .pr-sp-cap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 12px; margin-top: 4px; font-size: 15px; font-weight: 600; color: var(--sub); line-height: 1.5; }
+.g-printer .pr-sp-key i { display: inline-block; width: 18px; margin-right: 6px; vertical-align: middle; border-top: 2px dashed #8b94a1; }
+.g-printer .pr-sp-note { font-variant-numeric: tabular-nums; }
+
+/* 장바구니 */
+.g-printer .pr-basket { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 2px; margin: 4px 0 2px; max-width: 360px; }
+.g-printer .pr-basket i { font-style: normal; font-size: 20px; line-height: 1.25; text-align: center; transition: opacity 0.3s, filter 0.3s, transform 0.3s; }
+.g-printer .pr-basket i.off { opacity: 0.14; filter: grayscale(1); transform: scale(0.78); }
+
+/* 빵집 */
+.g-printer .pr-shops { display: flex; flex-wrap: wrap; gap: 2px 4px; margin: 4px 0 10px; }
+.g-printer .pr-shops i { font-style: normal; font-size: 24px; line-height: 1.2; }
+.g-printer .pr-build { height: 8px; margin-top: 8px; border-radius: 999px; background: #e9edf2; overflow: hidden; opacity: 0; transition: opacity 0.2s; }
+.g-printer .pr-build.on { opacity: 1; }
+.g-printer .pr-build i { display: block; width: 0; height: 100%; border-radius: inherit; background: var(--green); transition: width 0.1s linear; }
+
+/* 마을 사람의 말 */
+.g-printer .pr-talk { display: flex; align-items: center; gap: 10px; min-height: 58px; background: #fff; border: 1px solid var(--line); border-radius: 14px 14px 14px 4px; padding: 8px 14px; }
+.g-printer .pr-talk i { flex: none; font-style: normal; font-size: 28px; line-height: 1; }
+.g-printer .pr-talk p { margin: 0; font-size: 17px; font-weight: 700; line-height: 1.45; }
+.g-printer .pr-talk.warm p { color: #8a3a00; }
+.g-printer .pr-talk.hot { background: #ffecec; border-color: #f6c5c7; }
+.g-printer .pr-talk.hot p { color: #a12126; }
+.g-printer .pr-talk.down { background: var(--green-soft); border-color: #bfe8cc; }
+.g-printer .pr-talk.down p { color: #0f6a31; }
+.g-printer .pr-talk.pr-in p { animation: gm-fade-up 0.3s ease-out; }
+
+/* 임무 */
+.g-printer .pr-missions { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 8px; }
+.g-printer .pr-mi { display: flex; align-items: flex-start; gap: 10px; background: #fff; border: 1.5px solid var(--line); border-radius: 14px; padding: 10px 12px; transition: background 0.3s, border-color 0.3s; }
+.g-printer .pr-mi.done { background: var(--green-soft); border-color: var(--green); }
+.g-printer .pr-ck { flex: none; display: grid; place-items: center; width: 26px; height: 26px; margin-top: 1px; border: 2px solid #c3cad3; border-radius: 50%; font-style: normal; font-size: 16px; font-weight: 800; line-height: 1; color: transparent; }
+.g-printer .pr-mi.done .pr-ck { background: var(--green); border-color: var(--green); color: #fff; animation: gm-pop 0.32s ease-out; }
+.g-printer .pr-mi b { display: block; font-size: 16.5px; font-weight: 700; line-height: 1.45; }
+.g-printer .pr-mi small { display: block; font-size: 15px; font-weight: 600; color: var(--sub); line-height: 1.5; font-variant-numeric: tabular-nums; }
+
+/* 결과 */
+.g-printer .pr-result { animation: gm-fade-up 0.4s ease-out; }
+.g-printer .pr-result .gm-stats { margin-bottom: 12px; }
+.g-printer .pr-result .gm-stat { background: #fff; }
+.g-printer .pr-resultspark { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; margin-top: 12px; }
+.g-printer .pr-resultspark .pr-spark { margin-top: 0; }
+.g-printer .pr-again { margin-top: 16px; }
+
+@keyframes g-printer-bill {
+  0% { transform: translate(-50%, -50%) scale(0.5) rotate(0deg); opacity: 0; }
+  12% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: translate(calc(-50% + var(--dx, 0px)), calc(-50% + var(--dy, -120px))) scale(1) rotate(var(--rot, 20deg)); opacity: 0; }
+}
+@keyframes g-printer-slip {
+  0% { transform: translateY(-8px); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translateY(9px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-printer .pr-box, .g-printer .pr-mint, .g-printer .pr-basket i, .g-printer .pr-build, .g-printer .pr-build i, .g-printer .pr-mi, .g-printer .pr-price > b { transition: none; }
+  .g-printer .pr-price.hot > b, .g-printer .pr-mach, .g-printer .pr-talk.pr-in p, .g-printer .pr-mi.done .pr-ck, .g-printer .pr-result { animation: none; }
+  .g-printer .pr-mach::after, .g-printer .pr-bill { animation: none; display: none; }
+}

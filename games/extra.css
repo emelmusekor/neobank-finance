@@ -1,0 +1,340 @@
+/* 두 도시 */
+.g-cities .panels { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.g-cities .city { border: 1px solid var(--line); border-radius: 18px; padding: 16px; background: var(--bg); min-width: 0; }
+.g-cities .cname strong { display: block; font-size: 21px; font-weight: 800; }
+.g-cities .cname span { font-size: 14.5px; color: var(--sub); }
+.g-cities .cmain { display: grid; grid-template-columns: 92px 1fr; gap: 14px; margin-top: 12px; align-items: end; }
+.g-cities .ptrack { height: 170px; background: #fff; border: 1px solid var(--line); border-radius: 12px; display: flex; align-items: flex-end; overflow: hidden; }
+.g-cities .pbar { width: 100%; height: 33%; background: linear-gradient(180deg, var(--blue-2), var(--blue)); transition: height 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.4s; }
+.g-cities .pbar.hot { background: linear-gradient(180deg, #ff8a8d, var(--red)); }
+.g-cities .plabel { text-align: center; margin-top: 6px; }
+.g-cities .plabel span { display: block; font-size: 13px; color: var(--sub); font-weight: 600; }
+.g-cities .plabel .price { font-size: 26px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.g-cities .houses { display: flex; flex-wrap: wrap; gap: 2px; align-content: flex-end; min-height: 170px; }
+.g-cities .houses i { font-style: normal; font-size: 22px; line-height: 1.15; }
+.g-cities .hcount { display: block; font-size: 15px; font-weight: 700; color: var(--sub); margin-top: 6px; }
+.g-cities .cmp { display: grid; gap: 10px; margin: 8px 0 4px; }
+.g-cities .crow { display: grid; grid-template-columns: 120px 1fr 56px; gap: 12px; align-items: center; font-size: 16px; font-weight: 600; }
+.g-cities .ctrack { height: 22px; background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); }
+.g-cities .cfill { height: 100%; border-radius: 8px; transition: width 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.g-cities .crow b { font-size: 20px; text-align: right; font-variant-numeric: tabular-nums; }
+
+/* 가격 실험실 */
+.g-sd .lab { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 20px; align-items: start; }
+.g-sd .chart { background: var(--bg); border-radius: 16px; padding: 8px; }
+.g-sd .ctl { display: grid; gap: 14px; }
+.g-sd .gm-stat b { font-size: 19px; }
+
+/* 복리·대출 */
+.g-compound .fields, .g-loan .fields { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.g-compound .chart { background: var(--bg); border-radius: 16px; padding: 8px; }
+.g-loan .legend { display: flex; gap: 18px; font-size: 14.5px; color: var(--sub); }
+.g-loan .legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.g-loan i.prin { background: #c9d3df; }
+.g-loan i.intr { background: var(--red); }
+.g-loan .lbars { display: grid; gap: 10px; }
+.g-loan .lrow { display: grid; grid-template-columns: 220px 1fr 110px; gap: 12px; align-items: center; font-size: 15px; }
+.g-loan .lrow.me .lname { font-weight: 800; color: var(--blue); }
+.g-loan .ltrack { display: flex; height: 22px; background: var(--bg); border-radius: 7px; overflow: hidden; }
+.g-loan .ltrack i { display: block; height: 100%; transition: width 0.35s; }
+.g-loan .lrow b { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* 학급 경제 */
+.g-classroom .top { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 14px; }
+.g-classroom .hero { background: linear-gradient(135deg, var(--blue), var(--blue-2)); color: #fff; border-radius: 18px; padding: 16px 20px; }
+.g-classroom .hero span { display: block; font-size: 13px; opacity: 0.9; font-weight: 600; }
+.g-classroom .hero .big { font-size: 40px; font-weight: 800; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.g-classroom .hero .pairs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, 0.28); }
+.g-classroom .hero .pairs b { font-size: 21px; font-variant-numeric: tabular-nums; }
+.g-classroom .missions { margin: 0; padding: 12px 16px 12px 38px; background: var(--bg); border-radius: 18px; font-size: 15px; display: grid; gap: 4px; align-content: center; }
+.g-classroom .missions li { color: var(--sub); }
+.g-classroom .missions li.ok { color: var(--green); font-weight: 700; text-decoration: line-through; text-decoration-color: rgba(22, 163, 74, 0.4); }
+.g-classroom .cols { display: grid; grid-template-columns: 1fr 1.15fr 1.15fr; gap: 14px; align-items: start; }
+.g-classroom .ctitle { font-size: 14px; font-weight: 700; color: var(--sub); margin-bottom: 6px; }
+.g-classroom .students { border: 1px solid var(--line); border-radius: 14px; }
+.g-classroom .srow { position: relative; display: grid; grid-template-columns: 30px 1fr auto; gap: 10px; align-items: center; padding: 8px 12px; border-bottom: 1px solid var(--line); }
+.g-classroom .srow:last-child { border-bottom: 0; }
+.g-classroom .av { width: 30px; height: 30px; border-radius: 50%; background: var(--blue-soft); color: var(--blue); display: grid; place-items: center; font-weight: 800; font-size: 14px; }
+.g-classroom .nm { font-weight: 700; }
+.g-classroom .srow b { color: var(--blue); font-variant-numeric: tabular-nums; font-size: 18px; }
+.g-classroom .market { border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; }
+.g-classroom .mhead { display: flex; justify-content: space-between; align-items: baseline; }
+.g-classroom .day { font-size: 13px; color: var(--mute); font-weight: 600; }
+.g-classroom .shelf { display: grid; grid-template-columns: repeat(10, 1fr); gap: 1px; margin: 8px 0; }
+.g-classroom .shelf i { font-style: normal; font-size: 17px; text-align: center; transition: opacity 0.4s, transform 0.4s; }
+.g-classroom .shelf i.sold { opacity: 0.18; transform: scale(0.8); }
+.g-classroom .mprice { display: flex; justify-content: space-between; align-items: baseline; }
+.g-classroom .mprice span { font-size: 14px; color: var(--sub); font-weight: 600; }
+.g-classroom .pv { font-size: 26px; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--green); }
+.g-classroom .pv.warm { color: #c27800; }
+.g-classroom .pv.hot { color: var(--red); }
+.g-classroom .gm-log { max-height: 256px; }
+
+@media (max-width: 1000px) {
+  .g-cities .panels, .g-sd .lab, .g-compound .fields, .g-loan .fields, .g-classroom .top, .g-classroom .cols { grid-template-columns: 1fr; }
+  .g-cities .cmain { grid-template-columns: 76px 1fr; }
+  .g-cities .crow { grid-template-columns: 96px 1fr 48px; }
+  .g-loan .lrow { grid-template-columns: 1fr; gap: 4px; }
+  .g-loan .lrow b { text-align: left; }
+}
+
+/* ───────── 모션 인포그래픽 ───────── */
+
+/* 장이 열릴 때 차례로 올라온다 */
+.ch.play > h1, .ch.play > .lead, .ch.play > .kicker { animation: gm-fade-up 0.5s both; }
+.ch.play > .lead { animation-delay: 0.08s; }
+.ch.play > .stats > *, .ch.play > .grid > *, .ch.play .parts > * { animation: gm-fade-up 0.5s both; }
+.ch.play > .stats > :nth-child(2), .ch.play > .grid > :nth-child(2), .ch.play .parts > :nth-child(2) { animation-delay: 0.1s; }
+.ch.play > .stats > :nth-child(3), .ch.play > .grid > :nth-child(3), .ch.play .parts > :nth-child(3) { animation-delay: 0.2s; }
+.ch.play > .grid > :nth-child(4) { animation-delay: 0.3s; }
+
+/* 표지: 떠다니는 동전 */
+.hero { position: relative; overflow: hidden; }
+.hero h1, .hero p { position: relative; z-index: 1; }
+.hero .coins { position: absolute; inset: 0; pointer-events: none; }
+.hero .coins i {
+  position: absolute; bottom: -60px; width: 46px; height: 46px; border-radius: 50%; font-style: normal;
+  background: radial-gradient(circle at 35% 30%, #ffe58a, #f5b301); color: #8a6100; font-weight: 800; font-size: 22px;
+  display: grid; place-items: center; box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.12); opacity: 0.9;
+  animation: coin-rise 9s linear infinite;
+}
+.hero .coins i:nth-child(1) { left: 58%; animation-duration: 8s; }
+.hero .coins i:nth-child(2) { left: 68%; animation-duration: 11s; animation-delay: -3s; transform: scale(0.7); }
+.hero .coins i:nth-child(3) { left: 78%; animation-duration: 9s; animation-delay: -5s; }
+.hero .coins i:nth-child(4) { left: 87%; animation-duration: 12s; animation-delay: -1s; transform: scale(0.8); }
+.hero .coins i:nth-child(5) { left: 93%; animation-duration: 10s; animation-delay: -7s; transform: scale(0.6); }
+.hero .coins i:nth-child(6) { left: 49%; animation-duration: 13s; animation-delay: -9s; transform: scale(0.55); }
+@keyframes coin-rise {
+  0% { translate: 0 0; rotate: 0deg; opacity: 0; }
+  10% { opacity: 0.9; }
+  90% { opacity: 0.9; }
+  100% { translate: 0 -420px; rotate: 360deg; opacity: 0; }
+}
+
+/* 그림 인포그래픽 공통 상자 */
+.info { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; margin: 0 0 18px; }
+.info h3 { margin-bottom: 14px; }
+.info .cap { font-size: 15.5px; color: var(--sub); margin: 12px 0 0; }
+
+/* 돈의 변천 */
+.evo { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; position: relative; }
+.evo::before { content: ""; position: absolute; left: 8%; right: 8%; top: 36px; height: 4px; background: var(--line); border-radius: 2px; }
+.evo::after { content: ""; position: absolute; left: 8%; top: 36px; height: 4px; width: 0; background: var(--blue); border-radius: 2px; }
+.ch.play .evo::after { animation: evo-line 4s 0.4s ease-in-out forwards; }
+@keyframes evo-line { to { width: 84%; } }
+.evo div { text-align: center; position: relative; z-index: 1; }
+.evo .ic { width: 72px; height: 72px; margin: 0 auto 8px; border-radius: 50%; background: #fff; border: 3px solid var(--line); display: grid; place-items: center; font-size: 34px; }
+.ch.play .evo .ic { animation: evo-pop 0.5s both; }
+.ch.play .evo div:nth-child(1) .ic { animation-delay: 0.4s; }
+.ch.play .evo div:nth-child(2) .ic { animation-delay: 1.3s; }
+.ch.play .evo div:nth-child(3) .ic { animation-delay: 2.2s; }
+.ch.play .evo div:nth-child(4) .ic { animation-delay: 3.1s; }
+.ch.play .evo div:nth-child(5) .ic { animation-delay: 4s; }
+@keyframes evo-pop { 0% { transform: scale(0.4); border-color: var(--line); } 70% { transform: scale(1.15); } 100% { transform: scale(1); border-color: var(--blue); } }
+.evo b { display: block; font-size: 16px; }
+.evo span { font-size: 13.5px; color: var(--sub); }
+
+/* 구매력: 빵이 하나씩 사라진다 */
+.power { display: grid; grid-template-columns: auto 1fr; gap: 10px 18px; align-items: center; }
+.power .tag { font-weight: 800; font-size: 17px; background: var(--bg); border-radius: 12px; padding: 6px 12px; white-space: nowrap; }
+.power .row { display: flex; gap: 6px; font-size: 38px; line-height: 1; }
+.power .row i { font-style: normal; }
+.ch.play .power .row i.lose { animation: bread-out 0.7s both; }
+.ch.play .power .r2 i.lose { animation-delay: 1.2s; }
+.ch.play .power .r3 i.lose:nth-last-child(2) { animation-delay: 1.8s; }
+.ch.play .power .r3 i.lose:nth-last-child(1) { animation-delay: 2.2s; }
+@keyframes bread-out { to { opacity: 0.14; transform: scale(0.7) rotate(-12deg); filter: grayscale(1); } }
+
+/* 저울: 돈과 물건 */
+.scale { display: grid; grid-template-columns: 1fr auto 1fr; gap: 14px; align-items: end; text-align: center; }
+.scale .pan { background: var(--bg); border-radius: 16px; padding: 14px 10px; font-size: 26px; min-height: 110px; display: flex; flex-wrap: wrap; gap: 2px; justify-content: center; align-content: flex-end; }
+.scale .pan i { font-style: normal; }
+.scale .mid { font-size: 30px; font-weight: 800; color: var(--mute); padding-bottom: 30px; }
+.scale small { display: block; font-size: 14.5px; color: var(--sub); font-weight: 700; margin-top: 6px; }
+.ch.play .scale .extra { animation: gm-pop 0.4s both; }
+.ch.play .scale .extra:nth-of-type(n+6) { animation-delay: 0.9s; }
+.ch.play .scale .extra:nth-of-type(n+9) { animation-delay: 1.4s; }
+
+/* 경제 순환: 흐르는 점 */
+.flowdot { fill: var(--blue); }
+.flowdot.g { fill: var(--green); }
+.flowdot.y { fill: #f5b301; }
+
+/* 소득이 나뉘는 막대 */
+.split { display: flex; height: 54px; border-radius: 14px; overflow: hidden; background: var(--bg); }
+.split i { display: grid; place-items: center; font-style: normal; color: #fff; font-weight: 800; font-size: 15px; width: 0; white-space: nowrap; overflow: hidden; transition: width 1.1s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.ch.play .split i { width: var(--w); }
+.split .a { background: #8b94a1; }
+.split .b { background: var(--blue); transition-delay: 0.25s; }
+.split .c { background: var(--green); transition-delay: 0.5s; }
+.split .d { background: #f5b301; color: #5c4300; transition-delay: 0.5s; }
+.split-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14.5px; color: var(--sub); margin-top: 10px; }
+.split-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+
+/* 막대가 자라난다 */
+.bars .bar { transform-origin: left; }
+.ch.play .bars .bar { animation: bar-grow 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+.ch.play .bars .bar-row:nth-child(2) .bar { animation-delay: 0.2s; }
+.ch.play .bars .bar-row:nth-child(3) .bar { animation-delay: 0.4s; }
+@keyframes bar-grow { from { transform: scaleX(0); } }
+.ch.play .bars .bar span { animation: gm-fade-up 0.4s 1.2s both; }
+
+/* 신용점수 바늘 */
+.gauge { max-width: 420px; margin: 0 auto; }
+.gauge .needle { transform-origin: 160px 160px; transform: rotate(-80deg); }
+.ch.play .gauge .needle { animation: needle 5s 0.4s ease-in-out both; }
+@keyframes needle { 0% { transform: rotate(-80deg); } 35% { transform: rotate(55deg); } 60% { transform: rotate(55deg); } 80% { transform: rotate(-35deg); } 100% { transform: rotate(-35deg); } }
+.gauge-cap { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px; font-size: 15.5px; }
+.gauge-cap div { background: var(--bg); border-radius: 14px; padding: 10px 14px; }
+.gauge-cap b { display: block; }
+
+/* 보험: 백 명의 점 */
+.dots100 { display: grid; grid-template-columns: repeat(20, 1fr); gap: 4px; max-width: 560px; }
+.dots100 i { aspect-ratio: 1; border-radius: 50%; background: #c9d3df; }
+.ch.play .dots100 i { animation: dot-in 0.3s both; animation-delay: calc(var(--i) * 12ms); }
+.ch.play .dots100 i.hit { animation: dot-in 0.3s both, dot-hit 0.8s 1.6s both; animation-delay: calc(var(--i) * 12ms), 1.6s; }
+@keyframes dot-in { from { transform: scale(0); } }
+@keyframes dot-hit { to { background: var(--red); transform: scale(1.5); } }
+
+/* 세금: 월급이 통장에 오기까지 */
+.payslip { display: grid; gap: 8px; }
+.payslip .line { display: grid; grid-template-columns: 120px 1fr 96px; gap: 12px; align-items: center; font-size: 16px; }
+.payslip .track { height: 26px; background: var(--bg); border-radius: 8px; overflow: hidden; }
+.payslip .track i { display: block; height: 100%; width: 0; border-radius: 8px; transition: width 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.ch.play .payslip .track i { width: var(--w); }
+.payslip .l2 .track i { transition-delay: 0.5s; background: var(--red); }
+.payslip .l3 .track i { transition-delay: 1s; background: var(--green); }
+.payslip .l1 .track i { background: var(--blue); }
+.payslip b { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* 네오뱅크: 코인이 도는 길 */
+.loop svg { width: 100%; }
+
+/* 통화량 막대 */
+.msbar { display: flex; height: 46px; border-radius: 14px; overflow: hidden; }
+.msbar i { display: grid; place-items: center; font-style: normal; color: #fff; font-weight: 800; font-size: 15px; width: 0; white-space: nowrap; overflow: hidden; transition: width 1.1s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.ch.play .msbar i { width: var(--w); }
+.msbar .v { background: var(--blue); }
+.msbar .s { background: var(--green); transition-delay: 0.3s; }
+
+/* 세금이 갈리는 동전 */
+.taxsplit { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.taxsplit .coins10 { display: flex; gap: 4px; }
+.taxsplit .coins10 i { width: 30px; height: 30px; border-radius: 50%; font-style: normal; background: radial-gradient(circle at 35% 30%, #ffe58a, #f5b301); box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.12); }
+.ch.play .taxsplit .coins10 i:last-child { animation: tax-go 1.2s 1s both; }
+@keyframes tax-go { to { transform: translateY(-26px); background: radial-gradient(circle at 35% 30%, #ffb3b5, var(--red)); } }
+.taxsplit .lab { font-size: 15.5px; color: var(--sub); font-weight: 600; }
+
+@media (max-width: 1000px) {
+  .evo .ic { width: 52px; height: 52px; font-size: 24px; }
+  .evo::before, .evo::after { top: 26px; }
+  .evo b { font-size: 14px; }
+  .evo span { display: none; }
+  .power .row { font-size: 28px; }
+  .payslip .line { grid-template-columns: 84px 1fr 76px; font-size: 14.5px; }
+  .dots100 { grid-template-columns: repeat(10, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ch.play * { animation-duration: 0.01s !important; animation-delay: 0s !important; transition-duration: 0.01s !important; }
+  .hero .coins { display: none; }
+}
+
+/* 카드 아이콘, 아이콘 줄 */
+.ico { display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: var(--bg); font-size: 21px; margin-right: 10px; vertical-align: -9px; }
+.ch.play .ico { animation: gm-pop 0.45s 0.25s both; }
+.iconrow { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; text-align: center; position: relative; }
+.iconrow .ic { width: 68px; height: 68px; margin: 0 auto 8px; border-radius: 20px; background: var(--blue-soft); display: grid; place-items: center; font-size: 32px; }
+.iconrow b { font-size: 15.5px; }
+.ch.play .iconrow > div { animation: gm-fade-up 0.45s both; }
+.ch.play .iconrow > div:nth-child(2) { animation-delay: 0.12s; }
+.ch.play .iconrow > div:nth-child(3) { animation-delay: 0.24s; }
+.ch.play .iconrow > div:nth-child(4) { animation-delay: 0.36s; }
+.ch.play .iconrow > div:nth-child(5) { animation-delay: 0.48s; }
+.ch.play .iconrow > div:nth-child(6) { animation-delay: 0.6s; }
+.iconrow.six > div:not(:last-child)::after { content: "›"; position: absolute; margin-left: 34px; margin-top: -74px; font-size: 26px; color: var(--mute); font-weight: 700; display: none; }
+@media (max-width: 1000px) {
+  .iconrow { grid-template-columns: repeat(3, 1fr); }
+  .iconrow .ic { width: 56px; height: 56px; font-size: 26px; }
+}
+
+/* 표지: 게임 바로가기 */
+.plays { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; margin-top: 14px; }
+.plays h3 { margin-bottom: 12px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips a { text-decoration: none; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; font-size: 15.5px; font-weight: 600; transition: transform 0.12s, border-color 0.15s, background 0.15s; }
+.chips a:hover { border-color: var(--blue); background: var(--blue-soft); transform: translateY(-2px); }
+.ch.play .chips a { animation: gm-fade-up 0.4s both; animation-delay: calc(var(--n, 0) * 40ms); }
+.nav a .play-mark { margin-left: auto; font-size: 10px; color: var(--blue); opacity: 0.7; align-self: center; }
+
+/* 예금·적금 */
+.g-savings .fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.g-savings .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.g-savings .side2 { background: var(--bg); border-radius: 18px; padding: 16px; display: grid; gap: 8px; min-width: 0; }
+.g-savings .side2 strong { font-size: 20px; }
+.g-savings .cap2 { font-size: 14.5px; color: var(--sub); }
+.g-savings .blk { display: grid; grid-template-columns: repeat(12, 1fr); gap: 3px; height: 150px; align-items: end; background: #fff; border-radius: 12px; padding: 10px 8px 4px; }
+.g-savings .col { height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 2px; }
+.g-savings .col i { display: block; width: 100%; border-radius: 4px 4px 0 0; background: var(--blue); transform-origin: bottom; animation: sv-grow 0.6s both; }
+.g-savings .sav .col i { background: var(--green); }
+.g-savings .col small { font-size: 10px; color: var(--mute); }
+.g-savings .gm-stats { grid-template-columns: 1fr; }
+.g-savings .gm-stat { background: #fff; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.g-savings .gm-stat b { font-size: 20px; }
+@keyframes sv-grow { from { transform: scaleY(0); } }
+
+/* 소문과 주가 */
+.g-theme .chart { background: var(--bg); border-radius: 16px; padding: 8px; }
+.g-theme .legend { display: flex; gap: 18px; font-size: 14.5px; color: var(--sub); }
+.g-theme .legend i { display: inline-block; width: 18px; height: 4px; border-radius: 2px; margin-right: 6px; vertical-align: 4px; }
+.g-theme .legend i.b { background: var(--blue); }
+.g-theme .legend i.t { background: var(--red); }
+
+/* 시소 */
+.seesaw { position: relative; height: 150px; max-width: 520px; margin: 0 auto; }
+.seesaw .beam { position: absolute; left: 0; right: 0; top: 52px; height: 14px; background: #1a1d21; border-radius: 7px; transform-origin: 50% 50%; transform: rotate(0deg); }
+.ch.play .seesaw .beam { animation: seesaw 6s 0.4s ease-in-out infinite; }
+@keyframes seesaw { 0%, 15%, 100% { transform: rotate(0deg); } 45%, 80% { transform: rotate(10deg); } }
+.seesaw .beam span { position: absolute; top: -46px; background: var(--blue-soft); color: #0068c0; font-weight: 800; font-size: 16px; padding: 6px 14px; border-radius: 12px; white-space: nowrap; }
+.seesaw .beam .l { left: 0; }
+.seesaw .beam .r { right: 0; background: var(--amber-soft); color: #8a6100; }
+.seesaw .pivot { position: absolute; left: 50%; top: 62px; margin-left: -34px; border-left: 34px solid transparent; border-right: 34px solid transparent; border-bottom: 70px solid #c9d3df; }
+
+/* 위험과 수익 지도 */
+.riskmap svg { width: 100%; }
+.ch.play .riskmap .pts g { animation: gm-pop 0.5s both; animation-delay: calc(var(--d) * 0.16s + 0.3s); transform-origin: center; transform-box: fill-box; }
+
+.iconrow.five { grid-template-columns: repeat(5, 1fr); }
+.iconrow.four { grid-template-columns: repeat(4, 1fr); }
+.iconrow small { display: block; font-size: 13.5px; color: var(--sub); }
+
+@media (max-width: 1000px) {
+  .g-savings .fields, .g-savings .two { grid-template-columns: 1fr; }
+  .iconrow.five { grid-template-columns: repeat(3, 1fr); }
+  .iconrow.four { grid-template-columns: repeat(2, 1fr); }
+  .seesaw .beam span { font-size: 13.5px; padding: 5px 10px; }
+}
+
+/* 돌려받는 세금 */
+.g-taxback .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.g-taxback .box { background: var(--bg); border-radius: 18px; padding: 16px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.g-taxback .box > strong { font-size: 20px; }
+.g-taxback .gm-stat { background: #fff; }
+.g-taxback .gm-stat b { font-size: 21px; }
+.g-taxback .gm-msg { font-size: 15px; }
+.g-taxback .meter { height: 18px; background: #fff; border-radius: 9px; overflow: hidden; border: 1px solid var(--line); }
+.g-taxback .meter i { display: block; height: 100%; background: linear-gradient(90deg, var(--blue-2), var(--green)); border-radius: 9px; transition: width 0.3s; }
+.g-taxback .stack { display: flex; height: 34px; border-radius: 10px; overflow: hidden; background: #fff; border: 1px solid var(--line); }
+.g-taxback .stack i { display: grid; place-items: center; font-style: normal; font-size: 13px; font-weight: 800; color: #fff; white-space: nowrap; overflow: hidden; transition: width 0.3s; }
+.g-taxback .stack .c { background: var(--green); }
+.g-taxback .stack .p { background: var(--blue); }
+.g-taxback .stack .m { background: #8b94a1; }
+@media (max-width: 1000px) { .g-taxback .two { grid-template-columns: 1fr; } }
+
+@media (max-width: 1000px) {
+  .power { grid-template-columns: 1fr; gap: 4px 0; }
+  .power .tag { justify-self: start; }
+  .power .row { font-size: 26px; flex-wrap: wrap; margin-bottom: 8px; }
+  .taxsplit .coins10 { flex-wrap: wrap; }
+  .taxsplit .coins10 i { width: 24px; height: 24px; }
+}

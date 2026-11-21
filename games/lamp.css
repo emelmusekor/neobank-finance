@@ -1,0 +1,106 @@
+/* 마을 가로등 */
+.g-lamp .gm-msg { min-height: 52px; }
+.g-lamp .gm-stat span { font-size: 15px; line-height: 1.35; }
+.g-lamp .gm-stat b { font-size: 24px; white-space: nowrap; }
+
+.g-lamp .lp-stage { position: relative; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: #fff; padding-bottom: 14px; }
+
+/* 밤거리 */
+.g-lamp .lp-street { --lp-lit: 0; position: relative; height: 136px; background: linear-gradient(#0b1430, #1a2850); overflow: hidden; }
+.g-lamp .lp-street::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(255, 214, 102, 0.1), rgba(255, 214, 102, 0.42)); opacity: var(--lp-lit); transition: opacity 0.7s; pointer-events: none; }
+.g-lamp .lp-moon { position: absolute; right: 14px; top: 6px; font-size: 22px; line-height: 1; opacity: 0.9; }
+.g-lamp .lp-houses { position: absolute; left: 0; right: 0; bottom: 12px; text-align: center; font-size: 34px; line-height: 1; letter-spacing: 0.12em; white-space: nowrap; opacity: calc(0.22 + 0.78 * var(--lp-lit)); filter: saturate(calc(0.3 + 0.7 * var(--lp-lit))); transition: opacity 0.7s, filter 0.7s; }
+.g-lamp .lp-ground { position: absolute; left: 0; right: 0; bottom: 0; height: 16px; background: #2b3757; }
+.g-lamp .lp-lamps { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(8, 1fr); padding: 0 6px; }
+.g-lamp .lp-lamp { position: relative; }
+.g-lamp .lp-pole { position: absolute; left: 50%; bottom: 10px; width: 4px; height: 84px; margin-left: -2px; background: #55627f; border-radius: 2px; }
+.g-lamp .lp-head { position: absolute; left: 50%; bottom: 92px; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; background: #4a5674; border: 2px solid #6a7693; transition: background 0.4s, box-shadow 0.4s, border-color 0.4s; transition-delay: inherit; }
+.g-lamp .lp-pool { position: absolute; left: 50%; bottom: 2px; width: 120%; height: 18px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(ellipse at center, rgba(255, 220, 90, 0.75), rgba(255, 220, 90, 0) 70%); opacity: 0; transition: opacity 0.4s; transition-delay: inherit; }
+.g-lamp .lp-lamp.on .lp-head { background: #ffd84d; border-color: #fff2b8; box-shadow: 0 0 12px 5px rgba(255, 216, 77, 0.8), 0 0 36px 16px rgba(255, 216, 77, 0.28); }
+.g-lamp .lp-lamp.on .lp-pool { opacity: 1; }
+.g-lamp .lp-cap { text-align: center; font-size: 16px; font-weight: 700; color: var(--sub); padding: 8px 12px 0; }
+
+/* 모금함 */
+.g-lamp .lp-pot { position: relative; width: 190px; max-width: 70%; margin: 10px auto 0; background: #fff8e1; border: 2px solid #e2b23c; border-radius: 16px; padding: 12px 10px 8px; text-align: center; }
+.g-lamp .lp-slot { position: absolute; left: 50%; top: 5px; width: 46px; height: 5px; margin-left: -23px; border-radius: 3px; background: #7a5a12; }
+.g-lamp .lp-potlabel { font-size: 15px; font-weight: 700; color: #6b4d00; }
+.g-lamp .lp-potval { line-height: 1.2; }
+.g-lamp .lp-potnum { font-size: 32px; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--ink); }
+.g-lamp .lp-potval small { font-size: 15px; font-weight: 700; color: var(--sub); margin-left: 3px; }
+.g-lamp .lp-x2 { position: absolute; right: -14px; top: -10px; background: var(--red); color: #fff; font-size: 15px; font-weight: 800; border-radius: 999px; padding: 2px 10px; opacity: 0; white-space: nowrap; }
+.g-lamp .lp-x2.is-on { opacity: 1; }
+.g-lamp .lp-potnote { text-align: center; font-size: 16px; font-weight: 700; color: var(--sub); min-height: 26px; margin-top: 4px; }
+
+/* 네 사람 */
+.g-lamp .lp-people { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; padding: 4px 8px 0; }
+.g-lamp .lp-person { position: relative; text-align: center; border-radius: 14px; padding: 6px 2px 8px; min-width: 0; border: 2px solid transparent; transition: background 0.3s, border-color 0.3s; }
+.g-lamp .lp-person.me { background: var(--blue-soft); }
+.g-lamp .lp-person.is-top { background: var(--amber-soft); border-color: #e2b23c; }
+.g-lamp .lp-bubble { display: inline-block; min-height: 28px; font-size: 16px; font-weight: 800; line-height: 1.3; border-radius: 999px; padding: 3px 10px; white-space: nowrap; opacity: 0; background: var(--bg); color: var(--ink); }
+.g-lamp .lp-bubble.is-on { opacity: 1; }
+.g-lamp .lp-bubble.zero { background: #ffecec; color: #a12126; }
+.g-lamp .lp-bubble.gain { background: var(--green-soft); color: #0f6a31; }
+.g-lamp .lp-face { font-size: 38px; line-height: 1.2; }
+.g-lamp .lp-name { font-size: 17px; font-weight: 800; line-height: 1.3; }
+.g-lamp .lp-total { line-height: 1.2; }
+.g-lamp .lp-total b { font-size: 23px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.g-lamp .lp-total small { font-size: 15px; font-weight: 700; color: var(--sub); margin-left: 2px; display: inline-block; }
+.g-lamp .lp-tag { font-size: 15px; font-weight: 800; color: #6b4d00; line-height: 1.3; margin-top: 2px; animation: gm-pop 0.32s ease-out; }
+
+.g-lamp .lp-coin { position: absolute; width: 20px; height: 20px; margin: -10px 0 0 -10px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff0a0, #f5b301 70%); border: 2px solid #c98a00; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18); z-index: 6; pointer-events: none; transition: transform 0.56s cubic-bezier(0.5, 0, 0.3, 1); }
+
+/* 고르기 */
+.g-lamp .lp-ask { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.g-lamp .lp-givebtns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.g-lamp .lp-give { padding: 16px 6px; font-size: 22px; font-weight: 800; }
+.g-lamp .lp-taxcard { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; background: var(--amber-soft); border: 2px solid #e2b23c; border-radius: 18px; padding: 14px 18px; }
+.g-lamp .lp-taxcard.is-in { animation: gm-pop 0.4s ease-out; }
+.g-lamp .lp-taxicon { font-size: 34px; line-height: 1; }
+.g-lamp .lp-taxtext { flex: 1 1 200px; min-width: 0; }
+.g-lamp .lp-taxtext b { display: block; font-size: 19px; font-weight: 800; color: #3d2c00; line-height: 1.4; }
+.g-lamp .lp-taxtext span { display: block; font-size: 16px; color: #5c4300; }
+
+/* 회차별 표 */
+.g-lamp .lp-tablewrap { border: 1px solid var(--line); border-radius: 14px; overflow-x: auto; background: #fff; }
+.g-lamp .lp-table { font-size: 16px; }
+.g-lamp .lp-table th, .g-lamp .lp-table td { padding: 7px 6px; text-align: center; vertical-align: middle; line-height: 1.3; }
+.g-lamp .lp-table thead th { font-size: 15px; color: var(--sub); }
+.g-lamp .lp-table thead th span { display: block; }
+.g-lamp .lp-thface { font-size: 20px; line-height: 1.1; }
+.g-lamp .lp-table tbody th, .g-lamp .lp-table tfoot th { font-size: 15px; color: var(--sub); background: none; white-space: nowrap; }
+.g-lamp .lp-paid { display: block; font-size: 15px; color: var(--sub); font-weight: 600; }
+.g-lamp .lp-table td.zero .lp-paid { color: #a12126; }
+.g-lamp .lp-table td b { display: block; font-size: 17px; font-weight: 800; }
+.g-lamp .lp-row { animation: gm-fade-up 0.35s ease-out; }
+.g-lamp .lp-sum td, .g-lamp .lp-sum th { background: var(--bg); }
+.g-lamp .lp-sum td.top { background: var(--amber-soft); box-shadow: inset 0 0 0 2px #e2b23c; }
+.g-lamp .lp-best { display: block; font-size: 15px; font-weight: 800; color: #6b4d00; white-space: normal; }
+.g-lamp .lp-noterow td { background: var(--amber-soft); color: #5c4300; font-size: 15px; font-weight: 800; text-align: center; white-space: normal; }
+.g-lamp .lp-table tfoot td, .g-lamp .lp-table tfoot th { border-top: 2px solid var(--line); border-bottom: 0; }
+.g-lamp .lp-table tfoot td { font-size: 20px; font-weight: 800; }
+.g-lamp .lp-tablecap { font-size: 15px; color: var(--sub); margin-top: 6px; line-height: 1.5; }
+
+/* 결과 */
+.g-lamp .lp-result.is-in { animation: gm-fade-up 0.45s ease-out; }
+.g-lamp .lp-result .lp-tablewrap { margin: 10px 0 12px; }
+.g-lamp .lp-final thead th { white-space: normal; }
+.g-lamp .lp-final tbody th { font-size: 16px; color: var(--ink); font-weight: 700; text-align: left; padding-left: 12px; }
+.g-lamp .lp-final td.num { font-size: 20px; font-weight: 800; }
+.g-lamp .lp-final td.sum { color: var(--blue); }
+.g-lamp .lp-final td.top { background: var(--amber-soft); }
+.g-lamp .lp-allrow th, .g-lamp .lp-allrow td { background: var(--bg); border-top: 2px solid var(--line); }
+.g-lamp .lp-final .lp-allrow td.num { font-size: 22px; }
+
+@media (max-width: 1000px) {
+  .g-lamp .gm-stat b { font-size: 22px; }
+  .g-lamp .gm-stat { padding: 10px 12px; }
+  .g-lamp .lp-houses { font-size: 28px; }
+  .g-lamp .lp-table th, .g-lamp .lp-table td { padding: 6px 3px; }
+  .g-lamp .lp-bubble { padding: 3px 7px; font-size: 15px; }
+  .g-lamp .lp-face { font-size: 34px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-lamp .lp-street::after, .g-lamp .lp-houses, .g-lamp .lp-head, .g-lamp .lp-pool, .g-lamp .lp-person, .g-lamp .lp-coin { transition: none; }
+  .g-lamp .lp-tag, .g-lamp .lp-taxcard.is-in, .g-lamp .lp-row, .g-lamp .lp-result.is-in { animation: none; }
+}

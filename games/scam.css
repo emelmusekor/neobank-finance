@@ -1,0 +1,82 @@
+/* 진짜일까, 사기일까 */
+.g-scam { container: g-scam / inline-size; }
+
+/* 진행 점 */
+.g-scam .gm-stat span { font-size: 15px; }
+.g-scam .gm-stat b { font-size: 24px; }
+.g-scam .sc-dots { display: flex; justify-content: center; gap: 8px; }
+.g-scam .sc-dots i { width: 16px; height: 16px; border-radius: 50%; background: var(--line); transition: background 0.2s, box-shadow 0.2s; }
+.g-scam .sc-dots i.is-now { background: #fff; box-shadow: 0 0 0 3px var(--blue); }
+.g-scam .sc-dots i.is-right { background: var(--green); }
+.g-scam .sc-dots i.is-wrong { background: var(--red); }
+
+.g-scam .sc-main { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; }
+.g-scam .sc-ctx { background: var(--bg); border-radius: 14px; padding: 10px 14px; font-size: 16px; font-weight: 600; color: var(--sub); line-height: 1.5; }
+
+/* 휴대폰 화면 */
+.g-scam .sc-phone { width: 100%; max-width: 360px; margin: 0 auto; background: #eef1f5; border: 4px solid #2a2f36; border-radius: 32px; padding: 10px 12px 12px; box-shadow: 0 10px 26px rgba(20, 40, 80, 0.14); }
+.g-scam .sc-notch { width: 72px; height: 8px; border-radius: 999px; background: #2a2f36; margin: 0 auto 10px; }
+.g-scam .sc-home { width: 96px; height: 5px; border-radius: 999px; background: #b7bec8; margin: 12px auto 0; }
+.g-scam .sc-from { display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 16px; padding: 8px 12px; }
+.g-scam .sc-face { flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--blue); color: #fff; display: grid; place-items: center; font-size: 18px; font-weight: 800; line-height: 1; }
+.g-scam .sc-face.is-unknown { background: #9aa3af; }
+.g-scam .sc-from-text { min-width: 0; line-height: 1.3; }
+.g-scam .sc-from-name { display: block; font-size: 17px; font-weight: 800; }
+.g-scam .sc-from-sub { display: block; font-size: 15px; color: var(--sub); }
+.g-scam .sc-thread { min-height: 210px; padding: 14px 2px 0; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.g-scam .sc-bubble { position: relative; max-width: 96%; background: #fff; border-radius: 6px 20px 20px 20px; padding: 12px 14px; font-size: 17px; line-height: 1.6; word-break: keep-all; overflow-wrap: anywhere; box-shadow: 0 2px 6px rgba(20, 40, 80, 0.08); }
+.g-scam .sc-bubble.is-in { animation: g-scam-in 0.35s ease-out; }
+.g-scam .sc-bubble.is-safe { box-shadow: 0 0 0 3px var(--green); }
+.g-scam .sc-bubble.is-scam { box-shadow: 0 0 0 3px var(--red); }
+.g-scam .sc-time { font-size: 15px; color: var(--mute); padding-left: 6px; }
+.g-scam .sc-hl { border-radius: 5px; padding: 1px 0; -webkit-box-decoration-break: clone; box-decoration-break: clone; background-image: linear-gradient(#ffd9d9, #ffd9d9); background-repeat: no-repeat; background-size: 0% 100%; transition: background-size 0.5s ease-out, color 0.3s; }
+.g-scam .sc-bubble.is-scam .sc-hl { background-size: 100% 100%; color: #a12126; font-weight: 800; }
+.g-scam .sc-phone.is-shake { animation: gm-shake 0.36s; }
+
+/* 고르기 */
+.g-scam .sc-act { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.g-scam .sc-btns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.g-scam .sc-pick { padding: 16px 6px; min-height: 62px; border-width: 2px; }
+.g-scam .sc-no { border-color: var(--red); color: #c2282d; }
+.g-scam .sc-ok { border-color: var(--green); color: #0f7a37; }
+.g-scam .sc-no:hover { background: #ffecec; }
+.g-scam .sc-ok:hover { background: var(--green-soft); }
+.g-scam .sc-pick:disabled { opacity: 0.4; }
+.g-scam .sc-pick.is-answer:disabled { opacity: 1; color: #fff; }
+.g-scam .sc-no.is-answer { background: var(--red); }
+.g-scam .sc-ok.is-answer { background: var(--green); }
+.g-scam .sc-pick.is-picked { box-shadow: 0 0 0 4px rgba(26, 29, 33, 0.22); }
+.g-scam .sc-feed.is-in { animation: gm-fade-up 0.35s ease-out; }
+.g-scam .sc-feed-head { display: block; font-size: 18px; font-weight: 800; }
+.g-scam .sc-feed-why { display: block; font-weight: 600; }
+.g-scam .sc-next { width: 100%; }
+
+/* 결과 */
+.g-scam .sc-end .gm-result { animation: gm-fade-up 0.5s ease-out; }
+.g-scam .sc-score { font-size: 24px; font-weight: 800; color: var(--sub); line-height: 1.2; margin-bottom: 6px; }
+.g-scam .sc-score-num { font-size: 52px; color: var(--blue); font-variant-numeric: tabular-nums; }
+.g-scam .sc-habit-title { display: block; font-size: 17px; margin-bottom: 4px; }
+.g-scam .sc-habits { margin: 0; padding-left: 26px; }
+.g-scam .sc-habits li { padding: 3px 0; font-weight: 600; animation: gm-fade-up 0.45s ease-out both; }
+.g-scam .sc-habits li::marker { color: var(--blue); font-weight: 800; }
+
+@keyframes g-scam-in { from { opacity: 0; transform: translateY(12px) scale(0.96); } to { opacity: 1; transform: none; } }
+
+@container g-scam (min-width: 640px) {
+  .g-scam .sc-main { grid-template-columns: minmax(0, 340px) minmax(0, 1fr); grid-template-rows: auto 1fr; gap: 14px 22px; align-items: start; }
+  .g-scam .sc-phone { grid-column: 1; grid-row: 1 / span 2; margin: 0; }
+  .g-scam .sc-ctx { grid-column: 2; grid-row: 1; font-size: 17px; }
+  .g-scam .sc-act { grid-column: 2; grid-row: 2; }
+  .g-scam .sc-pick { font-size: 20px; min-height: 72px; }
+  .g-scam .sc-feed { font-size: 17px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-scam .sc-hl,
+  .g-scam .sc-dots i { transition: none; }
+  .g-scam .sc-bubble.is-in,
+  .g-scam .sc-feed.is-in,
+  .g-scam .sc-phone.is-shake,
+  .g-scam .sc-end .gm-result { animation: none; }
+  .g-scam .sc-habits li { animation: none; }
+}

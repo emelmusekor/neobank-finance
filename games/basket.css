@@ -1,0 +1,98 @@
+/* 만 원 장보기 */
+.g-basket { container: g-basket / inline-size; }
+
+.g-basket .bk-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.g-basket .bk-side { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.g-basket .bk-fig { min-width: 0; }
+
+/* 돈 */
+.g-basket .gm-stat span,
+.g-basket .gm-label { font-size: 15px; }
+.g-basket .gm-stat b { font-size: 24px; }
+.g-basket .bk-left-box.is-shake { background: #ffecec; }
+.g-basket .bk-left-box.is-shake b { color: var(--red); }
+.g-basket .bk-bar { display: flex; height: 14px; border-radius: 999px; background: var(--line); overflow: hidden; }
+.g-basket .bk-seg { display: block; height: 100%; width: 0; transition: width 0.35s cubic-bezier(0.3, 0.8, 0.3, 1); }
+.g-basket .bk-seg.b { background: #f0a030; }
+.g-basket .bk-seg.d { background: var(--blue); }
+
+/* 고르는 단추 */
+.g-basket .bk-steps { display: grid; gap: 8px; }
+.g-basket .bk-step { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 16px; padding: 8px; background: #fff; }
+.g-basket .bk-ico { flex: none; font-size: 32px; line-height: 1; width: 38px; text-align: center; }
+.g-basket .bk-info { flex: 1; min-width: 0; line-height: 1.3; }
+.g-basket .bk-info > b { display: block; font-size: 18px; font-weight: 800; }
+.g-basket .bk-info span { display: block; font-size: 15px; color: var(--sub); font-weight: 600; }
+.g-basket .bk-info span b { font-size: 16px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.g-basket .bk-ctl { flex: none; display: flex; align-items: center; gap: 4px; }
+.g-basket .bk-pm {
+  appearance: none; width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line); background: #fff; color: var(--ink);
+  font: inherit; font-size: 28px; font-weight: 700; line-height: 1; cursor: pointer; touch-action: manipulation;
+  display: grid; place-items: center; padding: 0 0 3px; transition: transform 0.08s, background 0.15s;
+}
+.g-basket .bk-pm.plus { background: var(--blue); border-color: var(--blue); color: #fff; }
+.g-basket .bk-pm:active { transform: scale(0.92); }
+.g-basket .bk-pm:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+.g-basket .bk-count { width: 34px; text-align: center; font-size: 26px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1; }
+
+/* 쟁반 */
+.g-basket .bk-tray { background: var(--bg); border: 2px dashed #cfd6df; border-radius: 16px; padding: 8px 12px 10px; min-height: 124px; }
+.g-basket .bk-tray-hint { font-size: 15px; color: var(--mute); padding: 8px 0; }
+.g-basket .bk-tray-row { display: flex; flex-wrap: wrap; gap: 2px 4px; min-height: 0; }
+.g-basket .bk-item { font-size: 30px; line-height: 1.25; display: inline-block; }
+.g-basket .bk-item.is-out { animation: g-basket-out 0.17s ease-in forwards; }
+
+/* 예산선 그림 */
+.g-basket .bk-chart { display: block; width: 100%; max-width: 480px; height: auto; margin: 0 auto; overflow: visible; }
+.g-basket .bk-area { fill: var(--blue-soft); }
+.g-basket .bk-axis { stroke: #9aa3af; stroke-width: 1.5; }
+.g-basket .bk-line { stroke: var(--blue); stroke-width: 3; stroke-linecap: round; }
+.g-basket .bk-grid-dot.in { fill: #8cc6f7; }
+.g-basket .bk-grid-dot.on { fill: var(--blue); }
+.g-basket .bk-grid-dot.out { fill: #d5dae1; }
+.g-basket .bk-tick { font-size: 15px; font-weight: 600; fill: var(--sub); font-variant-numeric: tabular-nums; }
+.g-basket .bk-tick.is-on { fill: var(--blue); font-weight: 800; font-size: 17px; }
+.g-basket .bk-axis-name { font-size: 15px; font-weight: 700; fill: var(--ink); }
+.g-basket .bk-line-name { font-size: 15px; font-weight: 800; fill: #0068c0; paint-order: stroke; stroke: #fff; stroke-width: 4px; stroke-linejoin: round; }
+.g-basket .bk-dot { transition: transform 0.38s cubic-bezier(0.3, 0.8, 0.3, 1); }
+.g-basket .bk-core { fill: var(--blue); stroke: #fff; stroke-width: 3; transition: fill 0.2s; }
+.g-basket .bk-ring { fill: var(--blue); opacity: 0.35; transform-box: fill-box; transform-origin: center; animation: g-basket-ring 1.6s ease-out infinite; }
+.g-basket .bk-dot.is-full .bk-core,
+.g-basket .bk-dot.is-full .bk-ring { fill: var(--green); }
+.g-basket .bk-ghost-in { opacity: 0; transform-box: fill-box; transform-origin: center; }
+.g-basket .bk-ghost-in circle { fill: #ffecec; stroke: var(--red); stroke-width: 2; stroke-dasharray: 4 3; }
+.g-basket .bk-ghost-in line { stroke: var(--red); stroke-width: 2.4; stroke-linecap: round; }
+.g-basket .bk-ghost-in.is-on { animation: g-basket-ghost 1s ease-out; }
+
+.g-basket .bk-legend { display: flex; flex-wrap: wrap; gap: 4px 16px; justify-content: center; margin-top: 8px; font-size: 15px; color: var(--sub); line-height: 1.5; }
+.g-basket .bk-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.g-basket .bk-legend i { flex: none; display: inline-block; }
+.g-basket .bk-legend .k-area { width: 16px; height: 12px; border-radius: 3px; background: var(--blue-soft); border: 1px solid #b9dcfa; }
+.g-basket .bk-legend .k-line { width: 18px; height: 3px; border-radius: 2px; background: var(--blue); }
+.g-basket .bk-legend .k-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--blue); }
+.g-basket .bk-pick { flex-basis: 100%; justify-content: center; }
+.g-basket .bk-pick.is-full .k-dot { background: var(--green); }
+.g-basket .bk-pick b { color: var(--ink); font-size: 16.5px; font-weight: 800; }
+
+@keyframes g-basket-out { to { transform: scale(0.2); opacity: 0; } }
+@keyframes g-basket-ring { 0% { transform: scale(1); opacity: 0.4; } 100% { transform: scale(2.4); opacity: 0; } }
+@keyframes g-basket-ghost { 0% { opacity: 0; transform: scale(0.4); } 18% { opacity: 1; transform: scale(1.2); } 30% { transform: scale(1); } 75% { opacity: 1; } 100% { opacity: 0; transform: scale(1); } }
+
+@container g-basket (min-width: 640px) {
+  .g-basket .bk-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: start; gap: 20px; }
+  .g-basket .bk-info > b { font-size: 20px; }
+  .g-basket .bk-info span { font-size: 16px; }
+  .g-basket .bk-info span b { font-size: 22px; }
+  .g-basket .bk-pm { width: 52px; height: 52px; }
+  .g-basket .bk-count { width: 40px; font-size: 28px; }
+  .g-basket .bk-item { font-size: 34px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-basket .bk-seg,
+  .g-basket .bk-dot,
+  .g-basket .bk-pm { transition: none; }
+  .g-basket .bk-ring { animation: none; opacity: 0; }
+  .g-basket .bk-item.is-out { animation-duration: 0.01s; }
+  .g-basket .bk-ghost-in.is-on { animation: none; opacity: 1; }
+}

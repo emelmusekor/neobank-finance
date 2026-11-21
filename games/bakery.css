@@ -1,0 +1,178 @@
+/* 빵집 사장 */
+.g-bakery {
+  --bk-plain: #008cff;
+  --bk-special: #eb6834;
+  --bk-crust: #fff4de;
+  --bk-crust-line: #f1dcb4;
+}
+
+/* 항상 보이는 숫자 */
+.g-bakery .bk-stats { display: flex; flex-wrap: wrap; gap: 10px; }
+.g-bakery .bk-stats .gm-stat { flex: 1 1 130px; min-width: auto; }
+.g-bakery .bk-stats .bk-stat-day { flex: 0 1 96px; }
+.g-bakery .bk-stats .gm-stat span { font-size: 15px; }
+.g-bakery .bk-stats .gm-stat b { font-size: 24px; white-space: nowrap; transition: color 0.3s; }
+
+.g-bakery .bk-stage > * + * { margin-top: 14px; }
+
+/* 시작 화면 */
+.g-bakery .bk-start > * + * { margin-top: 14px; }
+.g-bakery .bk-start-art { display: flex; justify-content: center; align-items: flex-end; gap: 14px; font-size: 44px; line-height: 1; padding: 18px 0 6px; }
+.g-bakery .bk-start-art span { animation: g-bakery-bob 2.4s ease-in-out infinite; }
+.g-bakery .bk-start-art span:nth-child(2) { font-size: 34px; margin: 0 6px; animation-delay: 0.3s; }
+.g-bakery .bk-start-art span:nth-child(3) { animation-delay: 0.6s; }
+/* 가게 그림: 줄무늬 차양과 진열창 */
+.g-bakery .bk-shop { position: relative; display: inline-flex; align-items: flex-end; justify-content: center; box-sizing: border-box; width: 2.3em; height: 2em; padding-bottom: 0.08em; font-size: 19px; line-height: 1.2; background: #fff; border: 2px solid #d9b77c; border-radius: 0.2em; }
+.g-bakery .bk-shop::before { content: ""; position: absolute; left: -0.22em; right: -0.22em; top: -0.2em; height: 0.62em; border-radius: 0.2em 0.2em 0.4em 0.4em; background: repeating-linear-gradient(90deg, var(--red) 0 0.44em, #fff 0.44em 0.88em); box-shadow: 0 0 0 1px #d9b77c; }
+.g-bakery .bk-rules { margin: 0; padding-left: 22px; font-size: 16.5px; color: var(--sub); }
+.g-bakery .bk-rules li::marker { color: var(--blue); }
+
+/* 오늘의 일 */
+.g-bakery .bk-event { display: flex; align-items: center; gap: 14px; background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 12px 16px; animation: gm-fade-up 0.35s ease-out; }
+.g-bakery .bk-event.special { background: #fff1ea; border-color: #f6c9b3; }
+.g-bakery .bk-event-ico { font-size: 38px; line-height: 1; flex: none; }
+.g-bakery .bk-event b { display: block; font-size: 19px; font-weight: 800; line-height: 1.4; }
+.g-bakery .bk-event span:not(.bk-event-ico) { display: block; font-size: 16px; color: var(--sub); line-height: 1.5; }
+
+/* 가격과 개수 */
+.g-bakery .bk-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px 22px; }
+.g-bakery .bk-field .gm-label { font-size: 16px; color: var(--ink); }
+.g-bakery .bk-out { font-size: 26px; font-weight: 800; color: var(--blue); line-height: 1.3; }
+.g-bakery .bk-slide { display: flex; align-items: center; gap: 8px; }
+.g-bakery .bk-slide .gm-range { flex: 1; min-width: 0; height: 36px; }
+.g-bakery .bk-step { flex: none; width: 42px; height: 42px; padding: 0; font-size: 22px; line-height: 1; border-radius: 12px; }
+
+.g-bakery .bk-preview { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+.g-bakery .bk-pre { background: var(--bg); border-radius: 14px; padding: 10px 14px; }
+.g-bakery .bk-pre em { display: block; font-style: normal; font-size: 15px; font-weight: 600; color: var(--sub); }
+.g-bakery .bk-pre b { display: block; font-size: 22px; font-weight: 800; line-height: 1.35; font-variant-numeric: tabular-nums; }
+.g-bakery .bk-pre span { display: block; font-size: 15px; color: var(--sub); line-height: 1.5; }
+.g-bakery .bk-pre.bad b, .g-bakery .bk-pre.bad span { color: var(--red); }
+
+/* 가게 장면 */
+.g-bakery .bk-scene { background: var(--bk-crust); border: 1px solid var(--bk-crust-line); border-radius: 18px; padding: 14px 16px; overflow: hidden; animation: gm-fade-up 0.3s ease-out; }
+.g-bakery .bk-scene > * + * { margin-top: 10px; }
+.g-bakery .bk-scene-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 6px 14px; }
+.g-bakery .bk-sign { font-size: 16px; font-weight: 800; background: #fff; border: 1px solid var(--bk-crust-line); border-radius: 999px; padding: 4px 14px; }
+.g-bakery .bk-live { font-size: 16px; font-weight: 600; color: #6b4d00; }
+.g-bakery .bk-live b { font-size: 24px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }
+.g-bakery .bk-shelf { display: flex; flex-wrap: wrap; gap: 2px 4px; min-height: 40px; align-items: center; background: #fff; border-radius: 12px; border-bottom: 5px solid #d9b77c; padding: 6px 10px; }
+.g-bakery .bk-bread { font-size: 26px; line-height: 1.2; transition: opacity 0.25s, transform 0.25s, filter 0.4s; }
+.g-bakery .bk-bread.gone { opacity: 0.1; transform: scale(0.55) translateY(8px); }
+.g-bakery .bk-bread.waste { filter: grayscale(1); opacity: 0.55; }
+.g-bakery .bk-shelf-empty { font-size: 15px; color: var(--sub); }
+.g-bakery .bk-lane { position: relative; height: 46px; border-bottom: 3px dashed var(--bk-crust-line); overflow: hidden; }
+.g-bakery .bk-door { position: absolute; left: 2px; bottom: 0; line-height: 1; z-index: 2; display: flex; }
+.g-bakery .bk-cust { position: absolute; left: 100%; bottom: 0; font-size: 28px; line-height: 1.2; opacity: 0; animation: g-bakery-walk-ok 1s linear both; }
+.g-bakery .bk-cust.no { animation-name: g-bakery-walk-no; }
+.g-bakery .bk-caption { margin: 10px 0 0; font-size: 16.5px; font-weight: 700; }
+.g-bakery .bk-key { margin: 4px 0 0; font-size: 15px; color: #8a6f3a; }
+
+/* 하루 결산 */
+.g-bakery .bk-report { animation: gm-fade-up 0.4s ease-out; }
+.g-bakery .bk-report > * + * { margin-top: 12px; }
+.g-bakery .bk-report .gm-msg b { font-size: 18px; font-weight: 800; }
+.g-bakery .bk-cells { display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 8px; }
+.g-bakery .bk-cell { background: var(--bg); border-radius: 14px; padding: 9px 12px; min-width: 0; }
+.g-bakery .bk-cell span { display: block; font-size: 15px; font-weight: 600; color: var(--sub); }
+.g-bakery .bk-cell b { display: block; font-size: 22px; font-weight: 800; line-height: 1.35; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.g-bakery .bk-cell.green { background: var(--green-soft); }
+.g-bakery .bk-cell.green b { color: #0f7a37; }
+.g-bakery .bk-cell.red { background: #ffecec; }
+.g-bakery .bk-cell.red b { color: #c0272c; }
+.g-bakery .bk-calc { margin: 0; padding: 10px 14px 10px 32px; border: 1px solid var(--line); border-radius: 14px; font-size: 16px; color: #3b424c; font-variant-numeric: tabular-nums; }
+
+/* 그래프 */
+.g-bakery .bk-chart { border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; background: #fff; }
+.g-bakery .bk-chart-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 16px; margin-bottom: 4px; }
+.g-bakery .bk-chart-title { font-size: 17px; font-weight: 800; }
+.g-bakery .bk-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 15px; color: var(--sub); }
+.g-bakery .bk-leg { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+.g-bakery .bk-leg i { display: inline-block; flex: none; }
+.g-bakery .bk-leg-dot { width: 13px; height: 13px; border-radius: 50%; background: var(--bk-plain); }
+.g-bakery .bk-leg-dia { width: 11px; height: 11px; border-radius: 2px; background: var(--bk-special); transform: rotate(45deg); }
+.g-bakery .bk-leg-line { width: 22px; height: 0; border-top: 3px solid var(--ink); border-radius: 2px; }
+.g-bakery .bk-chart-box { position: relative; }
+.g-bakery .bk-svg { display: block; width: 100%; height: auto; overflow: visible; touch-action: manipulation; }
+.g-bakery .bk-grid { stroke: var(--line); stroke-width: 1; }
+.g-bakery .bk-base { stroke: #c3c9d2; stroke-width: 1; }
+.g-bakery .bk-tick { font-size: 14px; fill: var(--sub); font-variant-numeric: tabular-nums; }
+.g-bakery .bk-axis { font-size: 15px; font-weight: 700; fill: var(--sub); }
+.g-bakery .bk-guide { stroke: var(--mute); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.g-bakery .bk-guide-label { font-size: 14px; font-weight: 700; fill: #3b424c; paint-order: stroke; stroke: #fff; stroke-width: 4px; stroke-linejoin: round; }
+.g-bakery .bk-demand { stroke: var(--ink); stroke-width: 2.5; stroke-linecap: round; }
+.g-bakery .bk-demand.draw { animation: g-bakery-draw 1.2s ease-out both; }
+.g-bakery .bk-dot { cursor: pointer; }
+.g-bakery .bk-hit { fill: transparent; }
+.g-bakery .bk-mark { fill: var(--bk-plain); stroke: #fff; stroke-width: 2; }
+.g-bakery .bk-mark.special { fill: var(--bk-special); }
+.g-bakery .bk-dot-no { font-size: 13.5px; font-weight: 800; fill: #fff; pointer-events: none; }
+.g-bakery .bk-pop { animation: g-bakery-pop 0.5s ease-out both; }
+.g-bakery .bk-tip { position: absolute; z-index: 4; left: 0; top: 0; transform: translate(-50%, -100%); width: max-content; background: var(--ink); color: #fff; border-radius: 10px; padding: 7px 11px; font-size: 14px; line-height: 1.45; pointer-events: none; opacity: 0; visibility: hidden; transition: opacity 0.12s; }
+.g-bakery .bk-tip.below { transform: translate(-50%, 0); }
+.g-bakery .bk-tip.on { opacity: 1; visibility: visible; }
+.g-bakery .bk-tip b { display: block; font-weight: 800; }
+.g-bakery .bk-tip span { display: block; white-space: nowrap; }
+.g-bakery .bk-chart-note { margin: 4px 0 0; font-size: 15px; color: var(--sub); line-height: 1.55; }
+
+/* 끝 */
+.g-bakery .gm-result > * + * { margin-top: 12px; }
+.g-bakery .gm-result p { margin-bottom: 0; }
+.g-bakery .bk-total { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.g-bakery .bk-total span { font-size: 17px; font-weight: 700; color: var(--sub); }
+.g-bakery .bk-total-num { font-size: 40px; font-weight: 800; line-height: 1.2; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.g-bakery .bk-total-num.green { color: var(--green); }
+.g-bakery .bk-total-num.red { color: var(--red); }
+.g-bakery .bk-best-line b { display: block; }
+.g-bakery .bk-compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; }
+.g-bakery .bk-cmp { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 16px; }
+.g-bakery .bk-cmp.best { border-color: var(--blue); box-shadow: inset 0 0 0 1px var(--blue); }
+.g-bakery .bk-cmp em { display: block; font-style: normal; font-size: 15px; font-weight: 700; color: var(--sub); }
+.g-bakery .bk-cmp b { display: block; font-size: 28px; font-weight: 800; line-height: 1.3; font-variant-numeric: tabular-nums; }
+.g-bakery .bk-cmp span { display: block; font-size: 16px; line-height: 1.5; }
+.g-bakery .bk-cmp span:last-child { font-weight: 800; }
+.g-bakery .bk-table-wrap { overflow-x: auto; background: #fff; border: 1px solid var(--line); border-radius: 14px; }
+.g-bakery .bk-table { font-size: 15.5px; }
+.g-bakery .bk-table th, .g-bakery .bk-table td { padding: 7px 10px; white-space: nowrap; }
+.g-bakery .bk-table th { font-size: 14px; }
+.g-bakery .bk-td-profit { font-weight: 800; }
+.g-bakery .bk-td-profit.green { color: #0f7a37; }
+.g-bakery .bk-td-profit.red { color: #c0272c; }
+.g-bakery .bk-foot { justify-content: flex-end; }
+.g-bakery .bk-foot .gm-btn { font-size: 15px; }
+
+@keyframes g-bakery-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes g-bakery-pop { 0% { transform: scale(0); opacity: 0; } 60% { transform: scale(1.35); opacity: 1; } 100% { transform: scale(1); } }
+@keyframes g-bakery-draw { from { stroke-dashoffset: var(--len); } to { stroke-dashoffset: 0; } }
+@keyframes g-bakery-walk-ok {
+  0% { left: 100%; opacity: 0; }
+  10% { opacity: 1; }
+  82% { left: 44px; opacity: 1; }
+  100% { left: 12px; opacity: 0; }
+}
+@keyframes g-bakery-walk-no {
+  0% { left: 100%; opacity: 0; filter: none; }
+  10% { opacity: 1; }
+  50% { left: 48px; filter: none; }
+  60% { left: 48px; filter: grayscale(1); opacity: 1; }
+  100% { left: 100%; filter: grayscale(1); opacity: 0; }
+}
+
+@media (max-width: 520px) {
+  .g-bakery .bk-stats .gm-stat { padding: 9px 12px; }
+  .g-bakery .bk-stats .gm-stat b { font-size: 22px; }
+  .g-bakery .bk-total-num { font-size: 32px; }
+  .g-bakery .bk-chart { padding: 10px 8px; }
+  .g-bakery .gm-result { padding: 16px 12px; }
+  .g-bakery .bk-table { font-size: 15px; }
+  .g-bakery .bk-table .bk-u { display: none; }
+  .g-bakery .bk-table th, .g-bakery .bk-table td { padding: 6px 3px; }
+  .g-bakery .bk-table th:first-child, .g-bakery .bk-table td:first-child { padding-left: 8px; }
+  .g-bakery .bk-table th:last-child, .g-bakery .bk-table td:last-child { padding-right: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-bakery .bk-start-art span, .g-bakery .bk-event, .g-bakery .bk-scene, .g-bakery .bk-report,
+  .g-bakery .bk-pop, .g-bakery .bk-demand.draw, .g-bakery .bk-cust { animation: none; }
+  .g-bakery .bk-bread { transition: none; }
+}

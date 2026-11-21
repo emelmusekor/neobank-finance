@@ -1,0 +1,99 @@
+/* 물물교환 시장 */
+.g-barter { container: g-barter / inline-size; }
+
+.g-barter .bt-round { display: inline-block; font-size: 15.5px; font-weight: 800; color: #6b4d00; background: var(--amber-soft); border-radius: 999px; padding: 5px 16px; line-height: 1.5; }
+.g-barter .bt-round.is-b { color: #0f6a31; background: var(--green-soft); }
+
+.g-barter .gm-stat span { font-size: 15px; }
+.g-barter .gm-stat b { font-size: 24px; }
+
+/* 내 손 */
+.g-barter .bt-hand { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 6px; align-items: center; }
+.g-barter .bt-hbox { position: relative; background: var(--blue-soft); border: 2px solid var(--blue); border-radius: 16px; padding: 8px 10px 10px; text-align: center; min-width: 0; }
+.g-barter .bt-hbox.goal { background: #fff; border: 2px dashed #cfd6df; }
+.g-barter .bt-hbox .gm-label { display: block; font-size: 15px; line-height: 1.4; }
+.g-barter .bt-hitem { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; }
+.g-barter .bt-hitem .bt-emo { font-size: 34px; line-height: 1; }
+.g-barter .bt-hitem b { font-size: 22px; font-weight: 800; line-height: 1.2; }
+.g-barter .bt-hitem .bt-coin { width: 30px; height: 30px; }
+.g-barter .bt-harrow { font-size: 22px; font-weight: 800; color: var(--mute); }
+.g-barter .bt-hbox.is-win { animation: g-barter-win 0.7s ease-out; }
+.g-barter .bt-spark { position: absolute; left: 50%; top: 50%; margin: -12px 0 0 -12px; width: 24px; height: 24px; font-size: 20px; line-height: 24px; text-align: center; pointer-events: none; z-index: 6; animation: g-barter-spark 0.9s ease-out forwards; }
+
+/* 코인 */
+.g-barter .bt-coin { flex: none; display: inline-block; width: 20px; height: 20px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #ffe680, #f2b705 70%); border: 2px solid #c98f00; box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.45); vertical-align: -4px; }
+
+/* 손을 거쳐 간 물건 */
+.g-barter .bt-trail { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; min-height: 40px; }
+.g-barter .bt-chip { display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: var(--bg); border: 1px solid var(--line); font-size: 22px; line-height: 1; }
+.g-barter .bt-chip.is-now { background: var(--blue-soft); border-color: var(--blue); }
+.g-barter .bt-tarrow { color: var(--mute); font-weight: 800; font-size: 16px; }
+
+/* 상인 */
+.g-barter .bt-market { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.g-barter .bt-card {
+  appearance: none; position: relative; display: block; width: 100%; min-width: 0; text-align: left; font: inherit; color: var(--ink);
+  background: #fff; border: 2px solid var(--line); border-radius: 16px; padding: 8px 8px 10px; cursor: pointer; touch-action: manipulation;
+  transition: border-color 0.15s, box-shadow 0.15s, opacity 0.2s, background 0.2s;
+}
+.g-barter .bt-card:active { border-color: var(--blue); }
+.g-barter .bt-card:focus-visible { outline: 3px solid var(--blue-2); outline-offset: 2px; }
+.g-barter .bt-who { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.g-barter .bt-face { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--bg); display: grid; place-items: center; font-size: 21px; line-height: 1; }
+.g-barter .bt-name { font-size: 17px; font-weight: 800; line-height: 1.3; }
+.g-barter .bt-line { display: flex; flex-wrap: wrap; align-items: center; gap: 0 6px; line-height: 1.5; }
+.g-barter .bt-k { font-size: 15px; font-weight: 600; color: var(--sub); white-space: nowrap; }
+.g-barter .bt-v { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+.g-barter .bt-v .bt-emo { font-size: 19px; line-height: 1; }
+.g-barter .bt-v b { font-size: 16.5px; font-weight: 800; }
+.g-barter .bt-tag { display: none; margin-top: 4px; font-size: 15px; font-weight: 800; color: #0f6a31; line-height: 1.4; }
+.g-barter .bt-card.is-done .bt-tag,
+.g-barter .bt-card.is-bought .bt-tag { display: block; }
+.g-barter .bt-card.is-done { background: var(--bg); opacity: 0.62; }
+.g-barter .bt-card.is-bought { border-color: var(--green); background: var(--green-soft); }
+.g-barter .bt-say {
+  position: absolute; left: 6px; right: 6px; top: 6px; z-index: 3; background: var(--ink); color: #fff; border-radius: 12px; padding: 7px 10px;
+  font-size: 15px; font-weight: 700; line-height: 1.4; text-align: center; pointer-events: none;
+  opacity: 0; transform: translateY(6px) scale(0.96); transition: opacity 0.18s, transform 0.18s;
+}
+.g-barter .bt-say.is-on { opacity: 1; transform: none; }
+
+/* 견주기 */
+.g-barter .bt-cmp { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.g-barter .bt-cmp-box { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 10px 8px 12px; min-width: 0; }
+.g-barter .bt-cmp-title { text-align: center; font-size: 16px; font-weight: 800; color: var(--sub); }
+.g-barter .bt-bars { display: flex; justify-content: center; align-items: flex-end; gap: 14px; margin-top: 6px; }
+.g-barter .bt-bar-col { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 0; }
+.g-barter .bt-bar-num { font-size: 24px; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.2; white-space: nowrap; }
+.g-barter .bt-bar-track { display: flex; align-items: flex-end; height: 124px; }
+.g-barter .bt-bar { display: block; width: 48px; height: 0; border-radius: 10px 10px 4px 4px; transition: height 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.g-barter .bt-bar.a { background: #f0a030; }
+.g-barter .bt-bar.b { background: var(--green); }
+.g-barter .bt-bar-name { font-size: 15px; font-weight: 700; line-height: 1.3; }
+.g-barter .bt-result { animation: gm-fade-up 0.5s ease-out; }
+
+@keyframes g-barter-win { 0% { transform: scale(1); } 35% { transform: scale(1.08); box-shadow: 0 0 0 8px rgba(22, 163, 74, 0.22); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); } }
+@keyframes g-barter-spark { 0% { transform: translate(0, 0) scale(0.4); opacity: 0; } 20% { opacity: 1; } 100% { transform: translate(var(--dx, 0), var(--dy, -40px)) scale(1.1); opacity: 0; } }
+
+@container g-barter (min-width: 520px) {
+  .g-barter .bt-market { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .g-barter .bt-card { padding: 12px 14px 14px; }
+  .g-barter .bt-name { font-size: 19px; }
+  .g-barter .bt-k { font-size: 16px; }
+  .g-barter .bt-v b { font-size: 18px; }
+  .g-barter .bt-v .bt-emo { font-size: 22px; }
+  .g-barter .bt-hand { gap: 12px; }
+  .g-barter .bt-hitem .bt-emo { font-size: 40px; }
+  .g-barter .bt-hitem b { font-size: 26px; }
+  .g-barter .bt-bar { width: 64px; }
+  .g-barter .bt-bars { gap: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-barter .bt-card,
+  .g-barter .bt-say,
+  .g-barter .bt-bar { transition: none; }
+  .g-barter .bt-hbox.is-win,
+  .g-barter .bt-result { animation: none; }
+  .g-barter .bt-spark { display: none; }
+}

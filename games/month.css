@@ -1,0 +1,176 @@
+/* 한 달 살기 */
+.g-month {
+  --mo-tax: #6250d6;
+  --mo-fixed: #eda100;
+  --mo-food: #2a78d6;
+  --mo-opt: #eb6834;
+  --mo-jar: #1baf7a;
+  --mo-cash: #c9d3df;
+}
+.g-month .mo-c-tax { background: var(--mo-tax); }
+.g-month .mo-c-fixed { background: var(--mo-fixed); }
+.g-month .mo-c-food { background: var(--mo-food); }
+.g-month .mo-c-opt { background: var(--mo-opt); }
+.g-month .mo-c-jar { background: var(--mo-jar); }
+.g-month .mo-c-cash { background: var(--mo-cash); }
+
+/* 항상 보이는 숫자 */
+.g-month .mo-stats { display: flex; flex-wrap: wrap; gap: 10px; }
+.g-month .gm-stat { position: relative; }
+.g-month .gm-stat span { font-size: 15px; }
+.g-month .gm-stat b { font-size: 24px; white-space: nowrap; }
+.g-month .gm-stat small { display: block; font-size: 15px; color: var(--sub); line-height: 1.4; }
+.g-month .mo-stats .gm-stat { flex: 1 1 118px; min-width: auto; }
+.g-month .mo-stats .mo-stat-week { flex: 0 1 84px; }
+.g-month .mo-stats .mo-stat-joy { flex: 2 1 230px; }
+.g-month .mo-joy { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 12px; }
+.g-month .mo-joy-num { white-space: nowrap; }
+.g-month .mo-joy-num b { display: inline; }
+.g-month .mo-joy-num em { font-style: normal; font-size: 16px; font-weight: 700; color: var(--mute); }
+.g-month .mo-hearts { display: flex; gap: 1px; font-size: 19px; line-height: 1; color: #d9dee6; }
+.g-month .mo-hearts .mo-heart { position: relative; display: inline-block; font-size: 19px; font-weight: 400; color: #d5dbe3; }
+.g-month .mo-heart i { position: absolute; left: 0; top: 0; width: 0; overflow: hidden; white-space: nowrap; font-style: normal; color: var(--red); transition: width 0.45s ease-out; }
+
+/* 쌓이는 막대 */
+.g-month .mo-bar-sec { border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; }
+.g-month .mo-bar-title { font-size: 16px; font-weight: 800; margin-bottom: 8px; }
+.g-month .mo-bar-box { position: relative; }
+.g-month .mo-bar { display: flex; height: 42px; border-radius: 12px; overflow: hidden; background: #eef1f5; }
+.g-month .mo-seg { flex: 0 1 auto; width: 0; min-width: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: inset -2px 0 0 #fff; transition: width 0.6s cubic-bezier(0.3, 0.7, 0.3, 1); }
+.g-month .mo-seg:last-child { box-shadow: none; }
+.g-month .mo-seg span { font-size: 15px; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.g-month .mo-seg.mo-c-fixed span, .g-month .mo-seg.mo-c-cash span { color: var(--ink); }
+.g-month .mo-seg.tiny span { display: none; }
+.g-month .mo-mark { position: absolute; top: -5px; bottom: -5px; width: 4px; margin-left: -2px; border-radius: 2px; background: var(--ink); box-shadow: 0 0 0 2px #fff; transition: left 0.6s cubic-bezier(0.3, 0.7, 0.3, 1); }
+.g-month .mo-over { margin: 8px 0 0; font-size: 15px; font-weight: 700; color: #c0272c; line-height: 1.5; }
+.g-month .mo-legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 4px 16px; margin-top: 10px; }
+.g-month .mo-leg { display: grid; grid-template-columns: 13px 1fr auto; align-items: center; gap: 8px; font-size: 15px; color: #3b424c; line-height: 1.5; }
+.g-month .mo-leg i { width: 13px; height: 13px; border-radius: 4px; }
+.g-month .mo-leg b { font-size: 16px; font-weight: 800; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+.g-month .mo-stage > * + * { margin-top: 14px; }
+.g-month .mo-step-title { font-size: 20px; font-weight: 800; line-height: 1.4; }
+
+/* 시작 화면 */
+.g-month .mo-start > * + * { margin-top: 14px; }
+.g-month .mo-start-art { display: flex; justify-content: center; align-items: flex-end; gap: 14px; font-size: 44px; line-height: 1; padding: 14px 0 4px; }
+.g-month .mo-start-art span { animation: g-month-bob 2.4s ease-in-out infinite; }
+.g-month .mo-start-art span:nth-child(2) { font-size: 62px; animation-delay: 0.3s; }
+.g-month .mo-start-art span:nth-child(3) { animation-delay: 0.6s; }
+
+/* 월급 명세 */
+.g-month .mo-ledger { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; min-height: 52px; }
+.g-month .mo-row { display: flex; align-items: center; gap: 12px; padding: 9px 16px; border-bottom: 1px solid var(--line); animation: gm-fade-up 0.35s ease-out; }
+.g-month .mo-row:last-child { border-bottom: 0; }
+.g-month .mo-row-ico { flex: none; font-size: 24px; line-height: 1; }
+.g-month .mo-row-name { flex: 1; min-width: 0; }
+.g-month .mo-row-name b { display: block; font-size: 17px; font-weight: 700; line-height: 1.45; }
+.g-month .mo-row-name small { display: block; font-size: 15px; color: var(--sub); line-height: 1.5; }
+.g-month .mo-row-amt { flex: none; font-size: 22px; font-weight: 800; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.g-month .mo-row-amt.minus { color: var(--red); }
+.g-month .mo-row-amt.plus { color: var(--green); }
+.g-month .mo-row.sum { background: var(--blue-soft); }
+.g-month .mo-row.sum b { color: #0b4f8a; font-weight: 800; }
+
+/* 저축 고르기 */
+.g-month .mo-ask { animation: gm-fade-up 0.4s ease-out; }
+.g-month .mo-ask p { margin: 4px 0 10px; font-size: 16px; color: var(--sub); line-height: 1.55; }
+.g-month .mo-saves { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.g-month .mo-save { appearance: none; font: inherit; color: var(--ink); background: #fff; border: 2px solid var(--line); border-radius: 16px; padding: 12px 6px; cursor: pointer; text-align: center; touch-action: manipulation; transition: transform 0.08s, border-color 0.15s, background 0.15s, opacity 0.2s; }
+.g-month .mo-save:hover { border-color: var(--mo-jar); }
+.g-month .mo-save:active { transform: scale(0.97); }
+.g-month .mo-save b { display: block; font-size: 26px; font-weight: 800; line-height: 1.3; color: #0f7a55; }
+.g-month .mo-save span { display: block; font-size: 16px; font-weight: 700; line-height: 1.4; }
+.g-month .mo-save small { display: block; font-size: 15px; color: var(--sub); line-height: 1.4; margin-top: 2px; }
+.g-month .mo-save:disabled { cursor: default; opacity: 0.45; }
+.g-month .mo-save.on { opacity: 1; border-color: var(--mo-jar); background: #e9f8f2; }
+
+/* 주간 카드 */
+.g-month .mo-week-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.g-month .mo-pips { display: flex; gap: 6px; }
+.g-month .mo-pips i { width: 30px; height: 8px; border-radius: 4px; background: var(--line); }
+.g-month .mo-pips i.past { background: var(--blue-2); }
+.g-month .mo-pips i.now { background: var(--blue); animation: gm-pulse 0.9s ease-in-out infinite; }
+.g-month .mo-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 12px; align-items: start; }
+.g-month .mo-card { border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; background: #fff; animation: gm-fade-up 0.4s ease-out both; transition: opacity 0.2s, border-color 0.2s; }
+.g-month .mo-card:nth-child(2) { animation-delay: 0.1s; }
+.g-month .mo-card > * + * { margin-top: 10px; }
+.g-month .mo-card.short { border-color: var(--red); }
+.g-month .mo-cards.asking .mo-card:not(.short) { opacity: 0.45; }
+.g-month .mo-card-head { display: flex; align-items: flex-start; gap: 12px; }
+.g-month .mo-card-ico { flex: none; font-size: 34px; line-height: 1.15; }
+.g-month .mo-card-head b { display: block; font-size: 19px; font-weight: 800; line-height: 1.4; }
+.g-month .mo-card-head span:not(.mo-card-ico) { display: block; font-size: 16px; color: #3b424c; line-height: 1.5; }
+.g-month .mo-card-head small { display: inline-block; margin-top: 4px; font-size: 15px; font-weight: 700; color: #6b4d00; background: var(--amber-soft); border-radius: 8px; padding: 1px 9px; line-height: 1.5; }
+.g-month .mo-opts { display: grid; gap: 8px; }
+.g-month .mo-opt { appearance: none; font: inherit; color: var(--ink); text-align: left; width: 100%; min-height: 52px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 12px; background: #fff; border: 2px solid var(--line); border-radius: 13px; padding: 9px 14px; cursor: pointer; touch-action: manipulation; transition: transform 0.08s, border-color 0.15s, background 0.15s, opacity 0.2s; }
+.g-month .mo-opt:hover { border-color: var(--blue-2); }
+.g-month .mo-opt:active { transform: scale(0.98); }
+.g-month .mo-opt-name { font-size: 17px; font-weight: 700; line-height: 1.4; }
+.g-month .mo-opt-meta { display: flex; align-items: baseline; gap: 10px; white-space: nowrap; }
+.g-month .mo-opt-meta em { font-style: normal; font-size: 18px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.g-month .mo-opt-meta em.minus { color: #c0272c; }
+.g-month .mo-opt-meta i { font-style: normal; font-size: 16px; font-weight: 800; color: var(--red); min-width: 44px; text-align: right; }
+.g-month .mo-opt-meta i.zero { color: var(--mute); }
+.g-month .mo-opt-sub { grid-column: 1 / -1; font-size: 15px; color: var(--sub); line-height: 1.45; }
+.g-month .mo-opt:disabled { cursor: default; opacity: 0.5; }
+.g-month .mo-opt.on { opacity: 1; border-color: var(--blue); background: var(--blue-soft); }
+.g-month .mo-card-foot:empty { display: none; }
+.g-month .mo-card-foot > * + * { margin-top: 8px; }
+.g-month .mo-card-foot .gm-msg { font-size: 16px; padding: 10px 14px; animation: gm-fade-up 0.3s ease-out; }
+.g-month .mo-after { margin: 0; font-size: 16px; color: var(--sub); }
+.g-month .mo-short { background: #ffecec; border-radius: 13px; padding: 12px 14px; }
+.g-month .mo-short b { display: block; font-size: 19px; font-weight: 800; color: #a12126; line-height: 1.4; }
+.g-month .mo-short span { display: block; font-size: 16px; color: #7c2a2d; line-height: 1.5; margin-bottom: 10px; }
+.g-month .mo-short .gm-btn { font-size: 16px; padding: 9px 14px; }
+
+/* 결산 */
+.g-month .gm-result > * + * { margin-top: 14px; }
+.g-month .gm-result p { margin-bottom: 0; }
+.g-month .mo-final { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px 26px; align-items: center; }
+.g-month .mo-donut { display: block; width: 220px; max-width: 100%; height: auto; margin: 0 auto; }
+.g-month .mo-donut-track { fill: none; stroke: #e9edf2; stroke-width: 34; }
+.g-month .mo-arc { fill: none; stroke-width: 34; transition: stroke-dasharray 0.95s cubic-bezier(0.3, 0.7, 0.3, 1); }
+.g-month .mo-s-tax { stroke: var(--mo-tax); }
+.g-month .mo-s-fixed { stroke: var(--mo-fixed); }
+.g-month .mo-s-food { stroke: var(--mo-food); }
+.g-month .mo-s-opt { stroke: var(--mo-opt); }
+.g-month .mo-s-jar { stroke: var(--mo-jar); }
+.g-month .mo-s-cash { stroke: var(--mo-cash); }
+.g-month .mo-donut-cap { font-size: 15px; font-weight: 700; fill: var(--sub); }
+.g-month .mo-donut-num { font-size: 26px; font-weight: 800; fill: var(--ink); }
+.g-month .mo-table { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 4px 16px; }
+.g-month .mo-tr { display: grid; grid-template-columns: 14px 1fr auto; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 17px; }
+.g-month .mo-tr:last-child { border-bottom: 0; }
+.g-month .mo-tr i { width: 14px; height: 14px; border-radius: 4px; }
+.g-month .mo-tr b { font-size: 22px; font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.g-month .mo-tr.sum { border-top: 2px solid var(--ink); font-weight: 800; }
+.g-month .mo-check { font-size: 16px; color: var(--sub); font-weight: 600; text-align: center; }
+.g-month .mo-end-stats .gm-stat { background: #fff; border: 1px solid var(--line); }
+.g-month .mo-sum-line { font-size: 18px; font-weight: 700; }
+.g-month .mo-sum-line.debt { color: #c0272c; }
+.g-month .mo-foot { justify-content: flex-end; }
+.g-month .mo-foot .gm-btn { font-size: 15px; }
+
+@keyframes g-month-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+@media (max-width: 520px) {
+  .g-month .mo-stats .gm-stat { padding: 9px 10px; }
+  .g-month .mo-stats .gm-stat b { font-size: 22px; }
+  .g-month .mo-stats .gm-stat { flex-basis: 100px; }
+  .g-month .mo-stats .mo-stat-week { flex-basis: 62px; }
+  .g-month .mo-stats .mo-stat-joy { flex-basis: 230px; }
+  .g-month .gm-result { padding: 16px 12px; }
+  .g-month .mo-bar-sec { padding: 10px; }
+  .g-month .mo-row { padding: 8px 10px; gap: 8px; }
+  .g-month .mo-save b { font-size: 23px; }
+  .g-month .mo-card { padding: 12px; }
+  .g-month .mo-opt { padding: 8px 10px; gap: 2px 8px; }
+  .g-month .mo-table { padding: 2px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-month .mo-start-art span, .g-month .mo-row, .g-month .mo-ask, .g-month .mo-card,
+  .g-month .mo-card-foot .gm-msg, .g-month .mo-pips i.now { animation: none; }
+  .g-month .mo-seg, .g-month .mo-mark, .g-month .mo-heart i, .g-month .mo-arc { transition: none; }
+}

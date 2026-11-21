@@ -1,0 +1,124 @@
+/* 머지 공장 */
+.g-merge .mg-stage { position: relative; display: grid; gap: 14px; container-type: inline-size; container-name: g-merge-stage; }
+.g-merge .mg-stage > * { min-width: 0; }
+
+/* 코인 */
+.g-merge .mg-coin {
+  display: inline-block; width: 0.82em; height: 0.82em; border-radius: 50%; vertical-align: -0.08em; margin-right: 6px;
+  background: radial-gradient(circle at 35% 30%, #ffe89a, #f5b301 62%, #c98a00); box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.45), 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.g-merge .gm-stat strong { font-weight: 800; }
+
+/* 남은 시간 막대 */
+.g-merge .mg-bar { height: 10px; border-radius: 999px; background: #e9edf2; overflow: hidden; }
+.g-merge .mg-bar i { display: block; height: 100%; width: 100%; border-radius: inherit; background: var(--blue); transition: width 0.25s linear, background 0.3s; }
+.g-merge .mg-bar.hurry i { background: var(--red); }
+.g-merge .mg-say { min-height: 52px; display: flex; align-items: center; }
+
+/* 판과 옆 칸 */
+.g-merge .mg-play { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+.g-merge .mg-boardwrap { position: relative; flex: 1 1 300px; min-width: 0; max-width: 500px; margin: 0 auto; }
+.g-merge .mg-side { flex: 1 1 240px; min-width: 0; display: grid; gap: 14px; }
+.g-merge .mg-board {
+  container-type: inline-size; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px;
+  padding: 8px; background: #e9edf2; border-radius: 18px;
+}
+.g-merge .mg-empty {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 78%; text-align: center; pointer-events: none;
+  background: rgba(255, 255, 255, 0.94); border-radius: 14px; padding: 12px 14px; font-size: 16px; font-weight: 700; color: var(--sub);
+  box-shadow: 0 4px 16px rgba(20, 40, 80, 0.1);
+}
+
+.g-merge .mg-cell {
+  appearance: none; position: relative; aspect-ratio: 1; min-width: 0; margin: 0; padding: 0;
+  border: 2px solid transparent; border-radius: 12px; background: #fff; color: var(--ink); font: inherit; cursor: pointer;
+  touch-action: manipulation; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent;
+  transition: transform 0.12s, box-shadow 0.15s, border-color 0.15s, opacity 0.15s;
+}
+.g-merge .mg-cell.has { touch-action: none; box-shadow: 0 2px 0 rgba(20, 40, 80, 0.1); }
+.g-merge .mg-cell.t1 { background: #fffbe6; }
+.g-merge .mg-cell.t2 { background: #fff0db; }
+.g-merge .mg-cell.t3 { background: #ffe3c2; }
+.g-merge .mg-cell.t4 { background: #e4f7ea; }
+.g-merge .mg-cell.t5 { background: #ffe6f0; }
+.g-merge .mg-cell.t6 { background: #dcefff; }
+.g-merge .mg-cell:focus-visible { outline: 3px solid #0b4f8a; outline-offset: 1px; }
+.g-merge .mg-cell.sel { border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue), 0 8px 16px rgba(0, 140, 255, 0.32); transform: scale(1.07); z-index: 2; }
+.g-merge .mg-cell.can { border-color: var(--blue); border-style: dashed; animation: g-merge-hint 1s ease-in-out infinite; }
+.g-merge .mg-cell.src { opacity: 0.35; transform: none; box-shadow: none; }
+.g-merge .mg-cell.over { border-color: var(--green); border-style: solid; box-shadow: 0 0 0 3px var(--green); transform: scale(1.05); }
+.g-merge .mg-cell.boom::after {
+  content: ""; position: absolute; inset: -2px; border-radius: 14px; border: 3px solid var(--blue); pointer-events: none;
+  animation: g-merge-ring 0.45s ease-out forwards;
+}
+
+.g-merge .mg-item { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.15; pointer-events: none; }
+.g-merge .mg-item.is-pop { animation-fill-mode: backwards; }
+.g-merge .mg-item.mg-popped { animation: g-merge-pop 0.42s cubic-bezier(0.3, 1.5, 0.5, 1); }
+.g-merge .mg-ico { font-size: 28px; font-size: clamp(22px, 9cqw, 44px); line-height: 1.1; }
+.g-merge .mg-name { font-size: 12px; font-size: clamp(11px, 3.3cqw, 15px); font-weight: 700; white-space: nowrap; }
+.g-merge .mg-price {
+  position: absolute; top: 3px; right: 3px; min-width: 1.5em; padding: 0 4px; border-radius: 999px; text-align: center;
+  background: rgba(255, 255, 255, 0.9); color: #8a6100; font-size: 11px; font-size: clamp(10px, 3cqw, 14px); font-weight: 800; line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 끌 때 따라다니는 그림, 날아가는 그림 */
+.g-merge .mg-ghost {
+  position: absolute; z-index: 10; pointer-events: none; font-size: 44px; line-height: 1;
+  transform: translate(-50%, -62%) scale(1.1); filter: drop-shadow(0 8px 8px rgba(0, 0, 0, 0.25));
+}
+.g-merge .mg-fly { position: absolute; z-index: 9; pointer-events: none; font-size: 30px; line-height: 1; font-style: normal; transform: translate(-50%, -50%); will-change: transform; }
+.g-merge .mg-fly.mg-coin { width: 20px; height: 20px; margin: 0; }
+
+/* 단추 */
+.g-merge .mg-acts { display: grid; grid-template-columns: repeat(auto-fit, minmax(132px, 1fr)); gap: 8px; }
+.g-merge .mg-acts .gm-btn { padding: 12px 8px; min-height: 52px; }
+
+/* 만드는 순서 */
+.g-merge .mg-cap { font-size: 15px; font-weight: 600; color: var(--sub); line-height: 1.45; margin-bottom: 8px; }
+.g-merge .mg-chain { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.g-merge .mg-chip { border: 1.5px solid var(--line); background: #fff; border-radius: 12px; padding: 6px 2px 8px; text-align: center; line-height: 1.3; transition: background 0.2s, border-color 0.2s; }
+.g-merge .mg-chip.on { background: var(--blue-soft); border-color: var(--blue); }
+.g-merge .mg-chip i { display: block; font-style: normal; font-size: 24px; line-height: 1.3; }
+.g-merge .mg-chip b { display: block; font-size: 15px; font-weight: 700; white-space: nowrap; }
+.g-merge .mg-chip em { display: block; font-style: normal; font-size: 15px; font-weight: 800; color: #8a6100; font-variant-numeric: tabular-nums; }
+
+/* 결과 */
+.g-merge .mg-result { animation: gm-fade-up 0.4s ease-out; }
+.g-merge .mg-result .gm-stat { background: #fff; }
+.g-merge .mg-result .gm-stats { margin-bottom: 12px; }
+.g-merge .mg-sum { font-size: 16.5px; }
+.g-merge .mg-tablewrap { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow-x: auto; margin-top: 12px; }
+.g-merge .mg-table { width: 100%; border-collapse: collapse; font-size: 16px; }
+.g-merge .mg-table th, .g-merge .mg-table td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+.g-merge .mg-table th { font-size: 14px; color: var(--sub); font-weight: 700; background: #fafbfc; line-height: 1.35; }
+.g-merge .mg-table th.num, .g-merge .mg-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+.g-merge .mg-table th.num { white-space: normal; }
+.g-merge .mg-table td.num { white-space: nowrap; font-weight: 700; }
+.g-merge .mg-table td.mg-cost { white-space: normal; }
+.g-merge .mg-table td.mg-cost span { display: inline-block; white-space: nowrap; }
+.g-merge .mg-table td:first-child { font-weight: 700; white-space: nowrap; }
+.g-merge .mg-table tr:last-child td { border-bottom: 0; }
+.g-merge .mg-table tr.made td { background: var(--blue-soft); }
+.g-merge .mg-table td.mg-plus { color: #0f7a37; }
+.g-merge .mg-tico { font-style: normal; margin-right: 6px; }
+.g-merge .mg-again { margin-top: 16px; }
+
+@keyframes g-merge-pop { 0% { transform: scale(0.5); } 55% { transform: scale(1.32); } 100% { transform: scale(1); } }
+@keyframes g-merge-ring { 0% { transform: scale(0.8); opacity: 0.9; } 100% { transform: scale(1.5); opacity: 0; } }
+@keyframes g-merge-hint { 0%, 100% { box-shadow: 0 0 0 0 rgba(0, 140, 255, 0.35); } 50% { box-shadow: 0 0 0 5px rgba(0, 140, 255, 0); } }
+
+@container g-merge-stage (max-width: 420px) {
+  .g-merge .mg-board { gap: 5px; padding: 6px; }
+  .g-merge .mg-result { padding: 16px 12px; }
+  .g-merge .mg-table th, .g-merge .mg-table td { padding: 8px 6px; }
+  .g-merge .mg-table { font-size: 15px; }
+  .g-merge .mg-tico { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .g-merge .mg-cell, .g-merge .mg-bar i, .g-merge .mg-chip { transition: none; }
+  .g-merge .mg-cell.can, .g-merge .mg-item.mg-popped, .g-merge .mg-result { animation: none; }
+  .g-merge .mg-cell.boom::after { animation: none; display: none; }
+}

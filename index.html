@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>경제·금융 기초와 네오뱅크</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="games/core.css">
+<link rel="stylesheet" href="games/extra.css">
+<link rel="stylesheet" href="games/ration.css">
+<link rel="stylesheet" href="games/basket.css">
+<link rel="stylesheet" href="games/barter.css">
+<link rel="stylesheet" href="games/bakery.css">
+<link rel="stylesheet" href="games/printer.css">
+<link rel="stylesheet" href="games/merge.css">
+<link rel="stylesheet" href="games/month.css">
+<link rel="stylesheet" href="games/invest.css">
+<link rel="stylesheet" href="games/village.css">
+<link rel="stylesheet" href="games/scam.css">
+<link rel="stylesheet" href="games/lamp.css">
 </head>
 <body>
 
@@ -20,13 +33,23 @@
 <!-- 표지 -->
 <section class="ch cover" id="cover" data-title="처음">
   <div class="hero">
+    <div class="coins" aria-hidden="true"><i>₩</i><i>₩</i><i>₩</i><i>₩</i><i>₩</i><i>₩</i></div>
     <h1>경제·금융 기초와<br>네오뱅크 사용법</h1>
     <p>집값과 화폐가치에서 저축·신용·세금까지, 그리고 교실 화폐 네오뱅크</p>
   </div>
   <div class="parts">
     <a href="#e0"><span class="n">1부</span><h3>경제 기본 상식</h3><p>집값, 희소성, 기회비용, 돈, 가격, 물가, 경제의 순환</p></a>
-    <a href="#f1"><span class="n">2부</span><h3>금융 기초</h3><p>소득과 지출, 저축과 투자, 신용, 보험, 세금</p></a>
+    <a href="#f1"><span class="n">2부</span><h3>금융 기초</h3><p>소득과 지출, 예금·적금, 주식·채권·ETF, 금·은, 신용, 보험, 세금, IRP·ISA</p></a>
     <a href="#n1"><span class="n">3부</span><h3>네오뱅크 사용법</h3><p>학급 준비부터 발행·지급·마켓·세금·뱃지까지</p></a>
+  </div>
+  <div class="plays">
+    <h3>직접 해 보는 경제</h3>
+    <div class="chips">
+      <a href="#e0">🏙️ 두 도시 집값</a><a href="#e1">🍞 빵 두 개, 손님 다섯</a><a href="#e2">🧺 만 원 장보기</a><a href="#e3">🔄 물물교환 시장</a>
+      <a href="#e4">📈 가격 실험실</a><a href="#e4">🥖 빵집 사장</a><a href="#e5">🖨️ 돈 찍어내기</a><a href="#e6">🏭 머지 공장</a>
+      <a href="#f1">🗓️ 한 달 살기</a><a href="#f2">🌱 복리 계산기</a><a href="#f2">🎢 10년 투자</a><a href="#p1">🪜 예금과 적금 견주기</a><a href="#p4">📣 소문과 주가</a><a href="#f3">🏦 대출 계산기</a>
+      <a href="#f4">☂️ 백 명 마을</a><a href="#f4">📱 진짜일까, 사기일까</a><a href="#f5">💡 마을 가로등</a><a href="#t1">🎟️ 돌려받는 세금</a><a href="#nsim">🏫 학급 경제 시뮬레이터</a>
+    </div>
   </div>
   <figure class="fig"><img src="img/cover.jpg" alt="빵집에서 빵을 고르는 손님들"></figure>
 </section>
@@ -39,15 +62,15 @@
   <p class="lead">같은 수도권이고 같은 돈이 풀렸는데, 서울 집값은 뛰고 서쪽은 조용합니다. 이 질문 하나에 경제의 기본이 거의 다 들어 있습니다.</p>
 
   <div class="stats">
-    <div class="stat"><span class="big">약 2배</span><span class="cap">10년 사이 늘어난 시중 통화량<br>2,200조 원 → 4,400조 원</span></div>
-    <div class="stat"><span class="big up">약 9%</span><span class="cap">2025년 서울 아파트값 상승률<br>19년 만에 가장 큰 폭</span></div>
+    <div class="stat"><span class="big">약 <span data-count="2" data-suffix="배">2배</span></span><span class="cap">10년 사이 늘어난 시중 통화량<br>2,200조 원 → 4,400조 원</span></div>
+    <div class="stat"><span class="big up">약 <span data-count="9" data-suffix="%">9%</span></span><span class="cap">2025년 서울 아파트값 상승률<br>19년 만에 가장 큰 폭</span></div>
     <div class="stat"><span class="big flat">제자리</span><span class="cap">같은 해 인천 아파트값<br>거의 오르지 않음</span></div>
   </div>
 
   <h2>집은 재화이면서 자산입니다</h2>
   <div class="grid g2">
-    <div class="card"><h3>재화</h3><p>쓰려고 사는 것입니다. 집은 들어가 사는 곳입니다. 값이 오르면 덜 삽니다.</p></div>
-    <div class="card"><h3>자산</h3><p>가치를 담아 두려고 갖는 것입니다. 집은 재산이기도 합니다. 값이 오를 것 같으면 오히려 더 사려 합니다.</p></div>
+    <div class="card"><h3><span class="ico">🏡</span>재화</h3><p>쓰려고 사는 것입니다. 집은 들어가 사는 곳입니다. 값이 오르면 덜 삽니다.</p></div>
+    <div class="card"><h3><span class="ico">💎</span>자산</h3><p>가치를 담아 두려고 갖는 것입니다. 집은 재산이기도 합니다. 값이 오를 것 같으면 오히려 더 사려 합니다.</p></div>
   </div>
   <p>라면값이 오르면 사람들은 라면을 덜 삽니다. 집값이 오르면 "더 오르기 전에 사야 한다"는 사람이 늘어납니다. 집값이 다른 물건값과 다르게 움직이는 이유입니다.</p>
 
@@ -63,6 +86,8 @@
     <div class="card"><h3>인천·부천</h3><p>바다를 메운 송도와 청라, 영종과 검단, 계양과 부천 대장까지 새 아파트를 지을 땅이 계속 나옵니다. 사려는 사람이 늘면 집이 먼저 늘어납니다.</p></div>
   </div>
   <p>수요가 같이 늘어도 공급이 따라오는 곳은 가격이 덜 오릅니다. 희소한 것이 비싸집니다.</p>
+
+  <div class="game" data-game="cities"></div>
 
   <h2>사려는 사람이 몰리는가</h2>
   <p>집의 수요는 일자리를 따라갑니다. 강남, 여의도, 광화문, 판교처럼 일자리가 많은 곳까지 걸리는 시간이 짧을수록 그 집을 원하는 사람이 많습니다. 통근 시간은 매일 치르는 기회비용입니다.</p>
@@ -100,17 +125,19 @@
 
   <h2>나누는 규칙이 달라지면</h2>
   <div class="grid g3">
-    <div class="card"><h3>먼저 온 순서</h3><p>일찍 와서 기다린 사람이 얻습니다. 기다린 시간이 값입니다.</p></div>
-    <div class="card"><h3>추첨</h3><p>운이 좋은 사람이 얻습니다. 누구에게나 기회는 같습니다.</p></div>
-    <div class="card"><h3>높은 값을 낸 순서</h3><p>더 많이 내려는 사람이 얻습니다. 시장에서 가장 흔한 방식입니다.</p></div>
+    <div class="card"><h3><span class="ico">🕐</span>먼저 온 순서</h3><p>일찍 와서 기다린 사람이 얻습니다. 기다린 시간이 값입니다.</p></div>
+    <div class="card"><h3><span class="ico">🎲</span>추첨</h3><p>운이 좋은 사람이 얻습니다. 누구에게나 기회는 같습니다.</p></div>
+    <div class="card"><h3><span class="ico">💰</span>높은 값을 낸 순서</h3><p>더 많이 내려는 사람이 얻습니다. 시장에서 가장 흔한 방식입니다.</p></div>
   </div>
   <p>어느 규칙을 쓰느냐에 따라 빵을 얻는 사람도, 치르는 대가도 달라집니다.</p>
 
+  <div class="game" data-game="ration"></div>
+
   <h2>경제가 답해야 하는 세 가지</h2>
   <div class="grid g3">
-    <div class="card"><h3>무엇을</h3><p>어떤 물건과 서비스를 얼마나 만들 것인가</p></div>
-    <div class="card"><h3>어떻게</h3><p>누가 어떤 방법으로 만들 것인가</p></div>
-    <div class="card"><h3>누구에게</h3><p>만든 것을 누가 가져갈 것인가</p></div>
+    <div class="card"><h3><span class="ico">🧺</span>무엇을</h3><p>어떤 물건과 서비스를 얼마나 만들 것인가</p></div>
+    <div class="card"><h3><span class="ico">🛠️</span>어떻게</h3><p>누가 어떤 방법으로 만들 것인가</p></div>
+    <div class="card"><h3><span class="ico">🤝</span>누구에게</h3><p>만든 것을 누가 가져갈 것인가</p></div>
   </div>
 </section>
 
@@ -129,6 +156,8 @@
     <p>빵은 2,000원, 음료는 1,000원입니다. 빵을 하나 더 사면 음료 두 잔을 살 수 없습니다.</p>
     <div class="calc"><span class="box">빵 1개</span><span class="op">의 기회비용 =</span><span class="box g">음료 2잔</span></div>
   </div>
+  <div class="game" data-game="basket"></div>
+
   <p>돈을 쓰지 않아도 기회비용은 생깁니다. 토요일 두 시간을 게임에 쓰면 그 시간에 할 수 있었던 운동이나 독서를 포기한 것입니다.</p>
 
   <h2>이미 쓴 돈은 잊어야 합니다</h2>
@@ -152,22 +181,24 @@
   <figure class="fig"><img src="img/barter.jpg" alt="빵 바구니와 옷을 맞바꾸는 두 사람"><figcaption>빵집 주인은 옷이 필요하고, 옷 가게 주인은 빵이 필요해야 거래가 이루어집니다.</figcaption></figure>
   <p>물물교환은 서로 원하는 것이 딱 맞는 상대를 찾아야 합니다. 돈이 있으면 빵을 팔아 돈을 받고, 그 돈으로 아무 가게에서나 옷을 살 수 있습니다.</p>
 
+  <div class="game" data-game="barter"></div>
+
   <h2>화폐의 세 가지 기능</h2>
   <div class="grid g3">
-    <div class="card"><h3>교환의 매개</h3><p>물건을 사고팔 때 중간에서 주고받는 수단입니다.</p></div>
-    <div class="card"><h3>가치의 척도</h3><p>빵 2,000원, 옷 30,000원처럼 값을 하나의 단위로 비교하게 해 줍니다.</p></div>
-    <div class="card"><h3>가치의 저장</h3><p>오늘 번 돈을 모아 두었다가 나중에 쓸 수 있습니다.</p></div>
+    <div class="card"><h3><span class="ico">🔁</span>교환의 매개</h3><p>물건을 사고팔 때 중간에서 주고받는 수단입니다.</p></div>
+    <div class="card"><h3><span class="ico">📏</span>가치의 척도</h3><p>빵 2,000원, 옷 30,000원처럼 값을 하나의 단위로 비교하게 해 줍니다.</p></div>
+    <div class="card"><h3><span class="ico">🐷</span>가치의 저장</h3><p>오늘 번 돈을 모아 두었다가 나중에 쓸 수 있습니다.</p></div>
   </div>
 
   <h2>돈의 모습은 계속 바뀌었습니다</h2>
-  <div class="card tablecard">
-    <table>
-      <tr><th>형태</th><th>예</th></tr>
-      <tr><td>물품화폐</td><td>조개껍데기, 소금, 쌀, 옷감</td></tr>
-      <tr><td>금속화폐</td><td>금화, 은화, 엽전</td></tr>
-      <tr><td>지폐</td><td>은행권</td></tr>
-      <tr><td>전자화폐</td><td>통장 잔액, 카드, 간편결제</td></tr>
-    </table>
+  <div class="info">
+    <div class="evo">
+      <div><span class="ic">🐚</span><b>물품화폐</b><span>조개, 소금, 쌀, 옷감</span></div>
+      <div><span class="ic">🪙</span><b>금속화폐</b><span>금화, 은화, 엽전</span></div>
+      <div><span class="ic">💵</span><b>지폐</b><span>은행권</span></div>
+      <div><span class="ic">💳</span><b>예금과 카드</b><span>통장 잔액, 체크·신용카드</span></div>
+      <div><span class="ic">📱</span><b>간편결제</b><span>휴대폰, QR</span></div>
+    </div>
   </div>
   <p>모습은 달라도 바탕은 같습니다. 누구나 받아 줄 것이라는 믿음이 있어야 돈으로 쓰입니다.</p>
 </section>
@@ -203,6 +234,8 @@
     </dl>
   </div>
 
+  <div class="game" data-game="sd"></div>
+
   <h2>가격이 움직이는 네 가지 경우</h2>
   <div class="card tablecard">
     <table>
@@ -216,6 +249,9 @@
 
   <h2>경쟁</h2>
   <p>같은 물건을 파는 사람이 많으면 혼자 값을 올리기 어렵습니다. 손님이 옆 가게로 가기 때문입니다. 파는 사람이 하나뿐이면 값을 정하는 힘이 커집니다.</p>
+
+  <h2>직접 값을 정해 봅니다</h2>
+  <div class="game" data-game="bakery"></div>
 </section>
 
 <section class="ch" id="e5" data-part="1" data-title="물가와 통화량">
@@ -228,17 +264,32 @@
     <dt>인플레이션</dt><dd>물가가 계속 오르는 현상입니다. 같은 돈으로 살 수 있는 양, 곧 구매력이 줄어듭니다.</dd>
   </dl>
 
-  <div class="card">
-    <h3>같은 만 원, 줄어든 빵</h3>
-    <div class="calc" style="margin-bottom:10px"><span class="box">빵 2,000원</span><span class="op">일 때 만 원 =</span><span class="box g">빵 5개</span></div>
-    <div class="calc"><span class="box">빵 2,500원</span><span class="op">일 때 만 원 =</span><span class="box y">빵 4개</span></div>
+  <div class="info">
+    <h3>같은 만 원, 줄어드는 빵</h3>
+    <div class="power">
+      <span class="tag">빵 2,000원</span><div class="row r1"><i>🥐</i><i>🥐</i><i>🥐</i><i>🥐</i><i>🥐</i></div>
+      <span class="tag">빵 2,500원</span><div class="row r2"><i>🥐</i><i>🥐</i><i>🥐</i><i>🥐</i><i class="lose">🥐</i></div>
+      <span class="tag">빵 3,300원</span><div class="row r3"><i>🥐</i><i>🥐</i><i>🥐</i><i class="lose">🥐</i><i class="lose">🥐</i></div>
+    </div>
+    <p class="cap">만 원은 그대로인데 살 수 있는 빵이 5개, 4개, 3개로 줄어듭니다.</p>
   </div>
 
   <h2>돈의 양이 늘면</h2>
   <dl class="term">
     <dt>통화량</dt><dd>경제 안에 풀려 있는 돈의 양입니다.</dd>
   </dl>
+  <div class="info">
+    <div class="scale">
+      <div><div class="pan"><i>💵</i><i>💵</i><i>💵</i><i>💵</i><i class="extra">💵</i><i class="extra">💵</i><i class="extra">💵</i><i class="extra">💵</i><i class="extra">💵</i><i class="extra">💵</i><i class="extra">💵</i><i class="extra">💵</i></div><small>돈은 세 배로</small></div>
+      <div class="mid">→</div>
+      <div><div class="pan"><i>🥐</i><i>🥐</i><i>🥐</i><i>🥐</i></div><small>빵은 그대로 네 개</small></div>
+    </div>
+    <p class="cap">빵 하나에 돌아가는 돈이 세 배가 됩니다. 빵값이 세 배가 됩니다.</p>
+  </div>
   <p>만들어 내는 물건은 그대로인데 돈만 늘어나면, 더 많은 돈이 같은 물건을 쫓게 되어 가격이 오르기 쉽습니다. 그래서 중앙은행은 돈의 양과 금리를 조절해 물가를 안정시키려 합니다. 우리나라의 중앙은행은 한국은행입니다.</p>
+
+  <h2>직접 돈을 찍어 봅니다</h2>
+  <div class="game" data-game="printer"></div>
 
   <h2>명목과 실질</h2>
   <div class="card">
@@ -265,6 +316,12 @@
         <line x1="120" y1="214" x2="246" y2="298"/>
         <line x1="394" y1="298" x2="520" y2="214"/>
       </g>
+      <circle r="6" class="flowdot"><animateMotion dur="2.6s" repeatCount="indefinite" path="M184 160 L454 160"/></circle>
+      <circle r="6" class="flowdot g"><animateMotion dur="2.6s" begin="-1.3s" repeatCount="indefinite" path="M456 192 L186 192"/></circle>
+      <circle r="5" class="flowdot y"><animateMotion dur="2.2s" repeatCount="indefinite" path="M120 136 L246 62"/></circle>
+      <circle r="5" class="flowdot y"><animateMotion dur="2.2s" begin="-1.1s" repeatCount="indefinite" path="M520 136 L394 62"/></circle>
+      <circle r="5" class="flowdot"><animateMotion dur="2.4s" begin="-0.6s" repeatCount="indefinite" path="M120 214 L246 298"/></circle>
+      <circle r="5" class="flowdot g"><animateMotion dur="2.4s" begin="-1.8s" repeatCount="indefinite" path="M394 298 L520 214"/></circle>
       <g font-size="15" fill="#3b424c" font-weight="600">
         <text x="320" y="150" text-anchor="middle">물건값 (소비)</text>
         <text x="320" y="214" text-anchor="middle">임금 (소득)</text>
@@ -283,11 +340,15 @@
   </div>
 
   <div class="grid g2">
-    <div class="card"><h3>가계</h3><p>일을 해서 소득을 얻고, 그 돈으로 소비하고 저축합니다.</p></div>
-    <div class="card"><h3>기업</h3><p>물건과 서비스를 만들어 팔고, 일한 사람에게 임금을 줍니다.</p></div>
-    <div class="card"><h3>정부</h3><p>세금을 걷어 도로, 학교, 소방처럼 함께 쓰는 것을 마련합니다.</p></div>
-    <div class="card"><h3>은행</h3><p>저축을 모아 돈이 필요한 가계와 기업에 빌려줍니다.</p></div>
+    <div class="card"><h3><span class="ico">🏠</span>가계</h3><p>일을 해서 소득을 얻고, 그 돈으로 소비하고 저축합니다.</p></div>
+    <div class="card"><h3><span class="ico">🏭</span>기업</h3><p>물건과 서비스를 만들어 팔고, 일한 사람에게 임금을 줍니다.</p></div>
+    <div class="card"><h3><span class="ico">🏛️</span>정부</h3><p>세금을 걷어 도로, 학교, 소방처럼 함께 쓰는 것을 마련합니다.</p></div>
+    <div class="card"><h3><span class="ico">🏦</span>은행</h3><p>저축을 모아 돈이 필요한 가계와 기업에 빌려줍니다.</p></div>
   </div>
+
+  <h2>만들면 가치가 더해집니다</h2>
+  <p>기업은 재료를 사서 더 값진 것으로 바꾸어 팝니다. 밀이 반죽이 되고 빵이 될 때마다 값이 붙습니다.</p>
+  <div class="game" data-game="merge"></div>
 </section>
 
 <!-- ================= 2부 ================= -->
@@ -299,15 +360,20 @@
 
   <h2>소득의 네 가지</h2>
   <div class="grid g4">
-    <div class="card"><h3>근로소득</h3><p>일한 대가로 받는 월급, 시급</p></div>
-    <div class="card"><h3>사업소득</h3><p>가게나 사업을 해서 번 돈</p></div>
-    <div class="card"><h3>재산소득</h3><p>이자, 배당, 임대료</p></div>
-    <div class="card"><h3>이전소득</h3><p>용돈, 연금, 지원금</p></div>
+    <div class="card"><h3><span class="ico">💼</span>근로소득</h3><p>일한 대가로 받는 월급, 시급</p></div>
+    <div class="card"><h3><span class="ico">🏪</span>사업소득</h3><p>가게나 사업을 해서 번 돈</p></div>
+    <div class="card"><h3><span class="ico">📈</span>재산소득</h3><p>이자, 배당, 임대료</p></div>
+    <div class="card"><h3><span class="ico">🎁</span>이전소득</h3><p>용돈, 연금, 지원금</p></div>
   </div>
 
   <h2>지출과 저축</h2>
   <div class="card">
     <div class="calc"><span class="box">소득</span><span class="op">−</span><span class="box y">지출</span><span class="op">=</span><span class="box g">저축</span></div>
+  </div>
+  <div class="info">
+    <h3>월급 250만 원이 나뉘는 모습</h3>
+    <div class="split"><i class="a" style="--w:10%">세금·보험 25</i><i class="b" style="--w:66%">소비지출 165</i><i class="c" style="--w:24%">저축 60</i></div>
+    <div class="split-legend"><span><i style="background:#8b94a1"></i>비소비지출 10%</span><span><i style="background:var(--blue)"></i>소비지출 66%</span><span><i style="background:var(--green)"></i>저축 24%</span></div>
   </div>
   <ul class="list">
     <li><b>소비지출</b>은 먹고, 입고, 배우고, 즐기는 데 쓰는 돈입니다.</li>
@@ -322,6 +388,9 @@
     <li>쓴 돈을 기록하고 계획과 비교합니다.</li>
   </ol>
 
+  <h2>한 달을 직접 살아 봅니다</h2>
+  <div class="game" data-game="month"></div>
+
   <h2>할인이 크면 싼 것일까</h2>
   <figure class="fig"><img src="img/anchor.jpg" alt="할인 가격표를 보며 옷을 잔뜩 안은 사람"><figcaption>정가 20,000원, 할인가 10,000원. 처음 본 숫자가 기준이 되면 필요 없는 물건도 싸게 느껴집니다.</figcaption></figure>
   <p>비교할 것은 정가가 아니라 다른 가게의 가격과, 그 물건이 정말 필요한지입니다.</p>
@@ -333,8 +402,8 @@
   <p class="lead">쓰지 않고 남긴 돈을 어디에 두느냐에 따라 미래의 크기가 달라집니다.</p>
 
   <div class="grid g2">
-    <div class="card"><h3>저축</h3><p>은행에 맡기고 정해진 이자를 받습니다. 원금을 지키는 대신 수익은 낮습니다.</p></div>
-    <div class="card"><h3>투자</h3><p>주식, 채권, 펀드를 삽니다. 더 큰 수익을 기대할 수 있지만 원금을 잃을 수도 있습니다.</p></div>
+    <div class="card"><h3><span class="ico">🐷</span>저축</h3><p>은행에 맡기고 정해진 이자를 받습니다. 원금을 지키는 대신 수익은 낮습니다.</p></div>
+    <div class="card"><h3><span class="ico">📊</span>투자</h3><p>주식, 채권, 펀드를 삽니다. 더 큰 수익을 기대할 수 있지만 원금을 잃을 수도 있습니다.</p></div>
   </div>
   <p>수익과 위험은 함께 움직입니다. 높은 수익을 기대할수록 손실 가능성도 커집니다.</p>
 
@@ -352,6 +421,8 @@
       <div class="bar-row"><span class="yr">30년</span><div><div class="bar" style="width:43.4%"><span>250만 원</span></div><div class="bar c" style="width:75%"><span>432만 원</span></div></div></div>
     </div>
   </div>
+  <div class="game" data-game="compound"></div>
+
   <div class="card">
     <h3>72의 법칙</h3>
     <p>복리로 돈이 두 배가 되는 데 걸리는 햇수를 어림합니다.</p>
@@ -361,8 +432,253 @@
   <h2>나누어 담기</h2>
   <p>한 곳에 모두 넣으면 그곳이 흔들릴 때 전부 잃습니다. 여러 곳에 나누면 한 곳의 손실이 전체에 미치는 영향이 줄어듭니다. 이를 <b>분산투자</b>라고 합니다.</p>
 
-  <h2>예금자보호</h2>
-  <p>은행이 문을 닫아도 예금보험공사가 금융회사 한 곳당 1인 1억 원까지 원금과 이자를 돌려줍니다. 주식이나 펀드 같은 투자 상품은 보호 대상이 아닙니다.</p>
+  <div class="game" data-game="invest"></div>
+
+</section>
+
+<section class="ch" id="p1" data-part="2" data-title="예금과 적금">
+  <p class="kicker"></p>
+  <h1>예금과 적금</h1>
+  <p class="lead">원금을 지키면서 이자를 받는, 가장 기본이 되는 금융상품입니다.</p>
+
+  <div class="grid g3">
+    <div class="card"><h3><span class="ico">👛</span>입출금통장</h3><p>언제든 넣고 뺍니다. 이자는 거의 없습니다. 생활비를 두는 곳입니다.</p></div>
+    <div class="card"><h3><span class="ico">🔒</span>정기예금</h3><p>목돈을 한 번에 맡기고 만기까지 둡니다. 이미 모은 돈을 굴릴 때 씁니다.</p></div>
+    <div class="card"><h3><span class="ico">🪜</span>정기적금</h3><p>매달 정한 금액을 넣습니다. 목돈을 만들어 갈 때 씁니다.</p></div>
+  </div>
+
+  <h2>같은 5%인데 이자가 다릅니다</h2>
+  <p>예금은 맡긴 돈 전체가 처음부터 끝까지 이자를 받습니다. 적금은 첫 달에 넣은 돈만 열두 달 치 이자를 받고, 마지막 달에 넣은 돈은 한 달 치만 받습니다.</p>
+  <div class="game" data-game="savings"></div>
+
+  <div class="card">
+    <h3>연 5% 적금에 매달 10만 원씩 1년</h3>
+    <div class="calc"><span class="box">원금 120만 원</span><span class="op">→</span><span class="box g">이자 32,500원</span><span class="op">원금의 약 2.7%</span></div>
+  </div>
+
+  <h2>이자에도 세금이 붙습니다</h2>
+  <div class="card">
+    <p>이자를 받을 때 이자소득세 15.4%를 먼저 떼고 줍니다.</p>
+    <div class="calc"><span class="box">이자 32,500원</span><span class="op">−</span><span class="box y">세금 5,005원</span><span class="op">=</span><span class="box g">받는 돈 27,495원</span></div>
+  </div>
+
+  <h2>고를 때 볼 것</h2>
+  <div class="card tablecard">
+    <table>
+      <tr><th>항목</th><th>확인할 내용</th></tr>
+      <tr><td>금리</td><td>기본 금리와 조건이 붙은 우대 금리를 나누어 봅니다. 세금을 뺀 뒤의 이자로 비교합니다.</td></tr>
+      <tr><td>기간</td><td>만기 전에 깨면 약속한 이자를 거의 받지 못합니다. 쓸 일이 없는 기간만큼만 묶습니다.</td></tr>
+      <tr><td>예금자보호</td><td>금융회사 한 곳당 1인 1억 원까지 원금과 이자를 돌려받습니다.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="ch" id="p2" data-part="2" data-title="채권·펀드·ETF">
+  <p class="kicker"></p>
+  <h1>채권·펀드·ETF</h1>
+  <p class="lead">예금보다 더 벌고 싶지만 한 회사에 몰아넣기는 불안할 때 쓰는 상품들입니다.</p>
+
+  <dl class="term">
+    <dt>채권</dt><dd>정부나 회사가 돈을 빌리면서 써 주는 차용증입니다. 정해진 이자를 주고 만기에 원금을 돌려줍니다. 빌린 곳이 망하면 돌려받지 못할 수 있습니다.</dd>
+  </dl>
+  <div class="grid g2">
+    <div class="card"><h3><span class="ico">🏛️</span>국채</h3><p>나라가 발행합니다. 떼일 위험이 가장 낮고 이자도 낮습니다.</p></div>
+    <div class="card"><h3><span class="ico">🏢</span>회사채</h3><p>회사가 발행합니다. 회사의 신용이 낮을수록 이자를 더 줍니다.</p></div>
+  </div>
+
+  <div class="info">
+    <h3>금리가 오르면 채권값은 내립니다</h3>
+    <div class="seesaw">
+      <div class="beam"><span class="l">시중 금리 ↑</span><span class="r">채권 가격 ↓</span></div>
+      <div class="pivot"></div>
+    </div>
+    <p class="cap">연 3% 이자를 주는 채권을 갖고 있는데 새 채권이 5%를 주기 시작하면, 3%짜리는 값을 깎아야 팔립니다.</p>
+  </div>
+
+  <dl class="term">
+    <dt>펀드</dt><dd>여러 사람의 돈을 모아 운용 회사가 주식과 채권에 나누어 투자합니다. 맡기는 대가로 해마다 보수를 냅니다.</dd>
+    <dt>지수</dt><dd>여러 주식의 가격을 묶어 하나의 숫자로 나타낸 것입니다. 코스피, 코스닥, 미국의 S&amp;P 500이 지수입니다.</dd>
+    <dt>ETF</dt><dd>지수를 그대로 따라가도록 만든 펀드를 주식처럼 사고파는 상품입니다. 한 주만 사도 수백 개 회사에 나누어 투자한 것과 같습니다.</dd>
+  </dl>
+
+  <div class="note">채권, 펀드, ETF는 <b>원금이 보장되지 않고 예금자보호 대상도 아닙니다.</b></div>
+</section>
+
+<section class="ch" id="p3" data-part="2" data-title="주식">
+  <p class="kicker"></p>
+  <h1>주식</h1>
+  <p class="lead">주식을 산다는 것은 그 회사의 주인 가운데 한 사람이 된다는 뜻입니다.</p>
+
+  <h2>돈을 버는 두 가지 길</h2>
+  <div class="grid g2">
+    <div class="card"><h3><span class="ico">📈</span>시세차익</h3><p>산 값보다 비싸게 팔아서 얻는 이익입니다. 값이 내리면 손실입니다.</p></div>
+    <div class="card"><h3><span class="ico">🎁</span>배당</h3><p>회사가 번 돈의 일부를 주주에게 나누어 주는 것입니다. 주지 않는 회사도 많습니다.</p></div>
+  </div>
+
+  <h2>회사의 크기는 주가가 아니라 시가총액입니다</h2>
+  <dl class="term">
+    <dt>시가총액</dt><dd>주가에 주식 수를 곱한 값입니다. 회사 전체를 사는 데 드는 돈입니다.</dd>
+  </dl>
+  <div class="card">
+    <div class="calc" style="margin-bottom:10px"><span class="box">가 회사 · 주가 10만 원</span><span class="op">×</span><span class="box y">100만 주</span><span class="op">=</span><span class="box g">1,000억 원</span></div>
+    <div class="calc"><span class="box">나 회사 · 주가 1만 원</span><span class="op">×</span><span class="box y">5,000만 주</span><span class="op">=</span><span class="box g">5,000억 원</span></div>
+    <p style="margin-top:12px">주가는 가 회사가 열 배 비싸지만 회사의 크기는 나 회사가 다섯 배입니다.</p>
+  </div>
+
+  <dl class="term">
+    <dt>PER</dt><dd>주가를 한 주가 벌어들이는 이익으로 나눈 값입니다. 10이면 지금 이익으로 10년을 벌어야 주가만큼 된다는 뜻입니다. 높을수록 미래에 대한 기대가 크게 들어가 있습니다.</dd>
+  </dl>
+
+  <h2>주가를 움직이는 것</h2>
+  <div class="card tablecard">
+    <table>
+      <tr><th>요인</th><th>주가가 오르기 쉬울 때</th><th>내리기 쉬울 때</th></tr>
+      <tr><td>실적</td><td>이익이 예상보다 많다</td><td>이익이 예상보다 적다</td></tr>
+      <tr><td>금리</td><td>금리가 내린다</td><td>금리가 오른다</td></tr>
+      <tr><td>기대</td><td>앞으로 더 벌 것이라고 본다</td><td>기대가 꺾인다</td></tr>
+      <tr><td>사려는 돈</td><td>사려는 사람이 많다</td><td>팔려는 사람이 많다</td></tr>
+    </table>
+  </div>
+  <p>실적이 좋아도 주가가 내릴 때가 있습니다. 좋은 실적이 이미 주가에 들어가 있었기 때문입니다.</p>
+
+  <h2>우리나라 주식시장</h2>
+  <div class="grid g3">
+    <div class="card"><h3><span class="ico">🏙️</span>코스피</h3><p>규모가 큰 회사가 중심인 시장</p></div>
+    <div class="card"><h3><span class="ico">🚀</span>코스닥</h3><p>기술 기업과 성장 기업이 중심인 시장</p></div>
+    <div class="card"><h3><span class="ico">⏰</span>거래</h3><p>정규 시간 9시부터 15시 30분. 하루에 30%까지만 오르내립니다.</p></div>
+  </div>
+  <p>사고팔 때 증권사 수수료를 내고, 팔 때는 증권거래세를 냅니다. 배당에는 15.4%의 세금이 붙습니다.</p>
+</section>
+
+<section class="ch" id="p4" data-part="2" data-title="우량주와 테마주">
+  <p class="kicker"></p>
+  <h1>우량주와 테마주</h1>
+  <p class="lead">같은 주식이라도 무엇을 보고 사느냐에 따라 전혀 다른 물건이 됩니다.</p>
+
+  <div class="card tablecard">
+    <table>
+      <tr><th>부르는 이름</th><th>어떤 주식인가</th><th>살필 점</th></tr>
+      <tr><td><b>우량주</b></td><td>오래 돈을 벌어 왔고 빚이 적으며 규모가 큰 회사</td><td>크게 오르기 어렵습니다. 그래도 내릴 때는 내립니다.</td></tr>
+      <tr><td><b>배당주</b></td><td>번 돈을 꾸준히 주주에게 나누어 주는 회사</td><td>이익이 줄면 배당도 줄어듭니다.</td></tr>
+      <tr><td><b>성장주</b></td><td>지금 이익은 적어도 빠르게 커지는 회사</td><td>기대가 꺾이면 크게 내립니다.</td></tr>
+      <tr><td><b>가치주</b></td><td>버는 돈과 가진 재산에 비해 주가가 낮은 회사</td><td>낮은 데는 이유가 있을 수 있습니다.</td></tr>
+      <tr><td><b>테마주</b></td><td>정치, 신기술, 유행 같은 이야깃거리로 묶여 함께 오르내리는 주식</td><td>회사의 이익과 상관없이 움직입니다.</td></tr>
+    </table>
+  </div>
+
+  <h2>테마주가 지나가는 길</h2>
+  <div class="info">
+    <div class="iconrow five">
+      <div><span class="ic">💬</span><b>소문</b></div>
+      <div><span class="ic">🚀</span><b>급등</b></div>
+      <div><span class="ic">🏃</span><b>뒤따라 사기</b></div>
+      <div><span class="ic">💸</span><b>먼저 산 사람이 팔기</b></div>
+      <div><span class="ic">📉</span><b>급락</b></div>
+    </div>
+    <p class="cap">오를 때 뒤따라 산 사람의 돈이 먼저 산 사람에게 넘어갑니다.</p>
+  </div>
+
+  <div class="game" data-game="theme"></div>
+
+  <h2>사기 전에 확인할 것</h2>
+  <ul class="list">
+    <li>회사가 실제로 그 사업을 하고 있는지 공시에서 확인합니다.</li>
+    <li>이익이 나는 회사인지 봅니다.</li>
+    <li>그 정보를 말한 사람이 누구이고 무엇을 얻는지 생각합니다.</li>
+    <li>"꼭 오른다"며 종목을 찍어 주는 단체방은 피합니다.</li>
+  </ul>
+  <div class="card tablecard">
+    <table>
+      <tr><th>거래소의 경보</th><th>뜻</th></tr>
+      <tr><td>투자주의</td><td>이상하게 오르거나 거래가 몰린 종목</td></tr>
+      <tr><td>투자경고</td><td>짧은 기간에 지나치게 오른 종목</td></tr>
+      <tr><td>투자위험</td><td>경고 뒤에도 계속 오른 종목. 거래가 멈출 수 있습니다.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="ch" id="p5" data-part="2" data-title="금과 은">
+  <p class="kicker"></p>
+  <h1>금과 은</h1>
+  <p class="lead">금은 이자도 배당도 주지 않습니다. 그런데도 사람들이 찾는 까닭은 마음대로 늘릴 수 없기 때문입니다.</p>
+
+  <div class="grid g2">
+    <div class="card"><h3><span class="ico">🥇</span>금</h3><p>돈의 가치가 떨어지거나 경제가 불안할 때 찾는 사람이 늘어납니다. 그래서 안전자산이라고 부릅니다.</p></div>
+    <div class="card"><h3><span class="ico">🥈</span>은</h3><p>금보다 훨씬 싸고, 전자제품과 태양광 같은 산업에 많이 쓰입니다. 경기에 따라 값이 금보다 크게 흔들립니다.</p></div>
+  </div>
+
+  <h2>우리나라 금값이 정해지는 식</h2>
+  <div class="card">
+    <div class="calc"><span class="box">국제 금값 (달러)</span><span class="op">×</span><span class="box y">환율</span><span class="op">=</span><span class="box g">원화 금값</span></div>
+    <p style="margin-top:12px">국제 금값이 그대로여도 환율이 오르면 우리나라 금값은 오릅니다.</p>
+  </div>
+
+  <h2>금을 사는 방법</h2>
+  <div class="card tablecard">
+    <table>
+      <tr><th>방법</th><th>특징</th></tr>
+      <tr><td>골드바·은괴 같은 실물</td><td>살 때 부가가치세 10%와 수수료가 붙고 보관할 곳이 필요합니다.</td></tr>
+      <tr><td>은행 금 통장</td><td>돈을 넣으면 그만큼의 금 무게로 적립됩니다.</td></tr>
+      <tr><td>거래소 금시장</td><td>증권사 계좌로 금을 1g 단위로 사고팝니다.</td></tr>
+      <tr><td>금 ETF·펀드</td><td>금값을 따라가는 상품을 주식처럼 사고팝니다.</td></tr>
+    </table>
+  </div>
+  <p>방법마다 세금과 수수료가 다릅니다.</p>
+
+  <h2>알고 사야 할 것</h2>
+  <ul class="list">
+    <li>값이 올라야만 이익이 납니다. 들고 있는 동안 나오는 돈은 없습니다.</li>
+    <li>몇 해씩 값이 제자리이거나 내릴 수 있습니다.</li>
+    <li>안전자산이라는 말은 값이 안 떨어진다는 뜻이 아닙니다.</li>
+  </ul>
+</section>
+
+<section class="ch" id="p6" data-part="2" data-title="투자 상품 한눈에">
+  <p class="kicker"></p>
+  <h1>투자 상품 한눈에</h1>
+  <p class="lead">더 벌 수 있는 곳은 더 잃을 수도 있는 곳입니다. 상품마다 자리가 다릅니다.</p>
+
+  <div class="info riskmap">
+    <svg viewBox="0 0 680 400" role="img" aria-label="위험과 기대 수익에 따른 투자 상품의 자리">
+      <line x1="70" y1="340" x2="660" y2="340" stroke="#1a1d21" stroke-width="2"/>
+      <line x1="70" y1="340" x2="70" y2="20" stroke="#1a1d21" stroke-width="2"/>
+      <text x="660" y="372" text-anchor="end" font-size="15" fill="#5b6470" font-weight="600">값이 흔들리는 정도 →</text>
+      <text x="62" y="18" font-size="15" fill="#5b6470" font-weight="600">↑ 기대 수익</text>
+      <line x1="70" y1="340" x2="640" y2="60" stroke="#c9d3df" stroke-width="3" stroke-dasharray="8 8"/>
+      <g class="pts" font-size="15" font-weight="700" text-anchor="middle">
+        <g style="--d:0"><circle cx="112" cy="312" r="24" fill="#e8f4ff" stroke="#008cff" stroke-width="2.5"/><text x="112" y="356" fill="#0068c0">예금·적금</text></g>
+        <g style="--d:1"><circle cx="196" cy="276" r="24" fill="#e8f4ff" stroke="#008cff" stroke-width="2.5"/><text x="196" y="248" fill="#0068c0">국채</text></g>
+        <g style="--d:2"><circle cx="278" cy="244" r="24" fill="#e9f9ef" stroke="#16a34a" stroke-width="2.5"/><text x="278" y="290" fill="#0f7a37">회사채</text></g>
+        <g style="--d:3"><circle cx="352" cy="262" r="24" fill="#fff7d6" stroke="#f5b301" stroke-width="2.5"/><text x="352" y="308" fill="#8a6100">금</text></g>
+        <g style="--d:4"><circle cx="410" cy="176" r="24" fill="#e9f9ef" stroke="#16a34a" stroke-width="2.5"/><text x="410" y="148" fill="#0f7a37">지수 ETF·우량주</text></g>
+        <g style="--d:5"><circle cx="472" cy="236" r="24" fill="#fff7d6" stroke="#f5b301" stroke-width="2.5"/><text x="472" y="282" fill="#8a6100">은</text></g>
+        <g style="--d:6"><circle cx="522" cy="122" r="24" fill="#ffecec" stroke="#e5484d" stroke-width="2.5"/><text x="522" y="94" fill="#a12126">성장주</text></g>
+        <g style="--d:7"><circle cx="594" cy="208" r="24" fill="#ffecec" stroke="#e5484d" stroke-width="2.5"/><text x="594" y="254" fill="#a12126">테마주</text></g>
+        <g style="--d:8"><circle cx="630" cy="150" r="24" fill="#ffecec" stroke="#e5484d" stroke-width="2.5"/><text x="622" y="122" fill="#a12126">가상자산</text></g>
+      </g>
+    </svg>
+    <p class="cap">오른쪽으로 갈수록 값이 크게 흔들립니다. 금, 은, 테마주처럼 선 아래에 있는 것은 흔들림에 비해 기대할 수 있는 수익이 뚜렷하지 않은 자리입니다.</p>
+  </div>
+
+  <div class="card tablecard">
+    <table>
+      <tr><th>상품</th><th>무엇으로 버는가</th><th>원금을 잃을 수 있는가</th><th>예금자보호</th></tr>
+      <tr><td>예금·적금</td><td>이자</td><td>아니오</td><td>1억 원까지</td></tr>
+      <tr><td>채권</td><td>이자, 가격 차이</td><td>예</td><td>없음</td></tr>
+      <tr><td>펀드·ETF</td><td>담긴 자산의 값 상승, 분배금</td><td>예</td><td>없음</td></tr>
+      <tr><td>주식</td><td>시세차익, 배당</td><td>예</td><td>없음</td></tr>
+      <tr><td>금·은</td><td>가격 차이</td><td>예</td><td>없음</td></tr>
+      <tr><td>가상자산</td><td>가격 차이</td><td>예. 전부 잃을 수 있습니다.</td><td>없음</td></tr>
+    </table>
+  </div>
+
+  <h2>투자의 네 가지 원칙</h2>
+  <div class="grid g4">
+    <div class="card"><h3><span class="ico">🧘</span>여윳돈으로</h3><p>당장 쓸 돈과 빌린 돈으로는 하지 않습니다.</p></div>
+    <div class="card"><h3><span class="ico">🧺</span>나누어서</h3><p>한 종목, 한 상품에 몰지 않습니다.</p></div>
+    <div class="card"><h3><span class="ico">⏳</span>오래</h3><p>짧게 볼수록 운에 좌우됩니다.</p></div>
+    <div class="card"><h3><span class="ico">🔍</span>아는 것만</h3><p>무엇으로 돈을 버는지 설명하지 못하면 사지 않습니다.</p></div>
+  </div>
 </section>
 
 <section class="ch" id="f3" data-part="2" data-title="신용과 대출">
@@ -383,13 +699,32 @@
     <div class="calc"><span class="box">자산 +100만</span><span class="op">−</span><span class="box y">부채 +100만</span><span class="op">=</span><span class="box g">순자산 변화 0</span></div>
   </div>
 
+  <div class="game" data-game="loan"></div>
+
   <h2>신용점수</h2>
   <p>빌린 돈과 카드값을 제때 갚은 기록이 쌓여 신용점수가 됩니다. 점수가 높으면 낮은 이자로 빌릴 수 있고, 연체가 쌓이면 이자가 높아지거나 빌리기 어려워집니다.</p>
+  <div class="info">
+    <div class="gauge">
+      <svg viewBox="0 0 320 190" role="img" aria-label="신용점수 계기판">
+        <path d="M30 160 A130 130 0 0 1 95 47" fill="none" stroke="#e5484d" stroke-width="22" stroke-linecap="round"/>
+        <path d="M110 40 A130 130 0 0 1 210 40" fill="none" stroke="#f5b301" stroke-width="22" stroke-linecap="round"/>
+        <path d="M225 47 A130 130 0 0 1 290 160" fill="none" stroke="#16a34a" stroke-width="22" stroke-linecap="round"/>
+        <g class="needle"><line x1="160" y1="160" x2="160" y2="54" stroke="#1a1d21" stroke-width="5" stroke-linecap="round"/></g>
+        <circle cx="160" cy="160" r="11" fill="#1a1d21"/>
+        <text x="34" y="186" font-size="14" font-weight="700" fill="#e5484d" text-anchor="middle">낮음</text>
+        <text x="286" y="186" font-size="14" font-weight="700" fill="#16a34a" text-anchor="middle">높음</text>
+      </svg>
+    </div>
+    <div class="gauge-cap">
+      <div><b>올라가는 일</b>제때 갚기, 오래 거래하기, 빚을 적게 유지하기</div>
+      <div><b>내려가는 일</b>연체하기, 짧은 기간에 여러 곳에서 빌리기</div>
+    </div>
+  </div>
 
   <h2>체크카드와 신용카드</h2>
   <div class="grid g2">
-    <div class="card"><h3>체크카드</h3><p>결제하는 순간 통장 잔액에서 빠져나갑니다. 잔액만큼만 쓸 수 있습니다.</p></div>
-    <div class="card"><h3>신용카드</h3><p>카드사가 먼저 내 주고 나중에 갚습니다. 외상이며 곧 빚입니다.</p></div>
+    <div class="card"><h3><span class="ico">💳</span>체크카드</h3><p>결제하는 순간 통장 잔액에서 빠져나갑니다. 잔액만큼만 쓸 수 있습니다.</p></div>
+    <div class="card"><h3><span class="ico">🧾</span>신용카드</h3><p>카드사가 먼저 내 주고 나중에 갚습니다. 외상이며 곧 빚입니다.</p></div>
   </div>
 </section>
 
@@ -405,12 +740,46 @@
     <p>한 해에 100명 중 1명이 100만 원의 손해를 본다면, 한 사람이 감당해야 할 평균 손실은 1만 원입니다.</p>
     <div class="calc"><span class="box">확률 1%</span><span class="op">×</span><span class="box y">손해 100만 원</span><span class="op">=</span><span class="box g">1만 원</span></div>
   </div>
+  <div class="info">
+    <div class="dots100" data-hit="37"></div>
+    <p class="cap">백 명 가운데 누가 빨간 점이 될지는 아무도 모릅니다. 그래서 모두가 조금씩 냅니다.</p>
+  </div>
 
   <dl class="term">
     <dt>보험료</dt><dd>가입자가 정기적으로 내는 돈입니다.</dd>
     <dt>보험금</dt><dd>약속한 사고가 났을 때 받는 돈입니다.</dd>
     <dt>자기부담금</dt><dd>손해 가운데 가입자가 직접 내는 몫입니다.</dd>
   </dl>
+
+  <h2>보험의 종류</h2>
+  <div class="grid g2">
+    <div class="card"><h3><span class="ico">🛟</span>보장성 보험</h3><p>사고와 질병에 대비합니다. 일이 없으면 돌려받는 돈이 적거나 없습니다. 보험의 본래 쓰임입니다.</p></div>
+    <div class="card"><h3><span class="ico">🏺</span>저축성 보험</h3><p>목돈이나 노후 자금을 만듭니다. 일찍 해지하면 낸 돈보다 적게 돌려받습니다.</p></div>
+  </div>
+  <div class="card tablecard">
+    <table>
+      <tr><th>보험</th><th>무엇에 대비하는가</th></tr>
+      <tr><td>실손의료보험</td><td>병원과 약국에 실제로 낸 돈의 일부를 돌려받습니다.</td></tr>
+      <tr><td>자동차보험</td><td>사고로 남에게 입힌 피해를 물어 줍니다. 차가 있으면 반드시 들어야 합니다.</td></tr>
+      <tr><td>화재보험</td><td>불이 나서 생긴 집과 가게의 손해</td></tr>
+      <tr><td>정기보험·종신보험</td><td>가장이 세상을 떠났을 때 남은 가족의 생활</td></tr>
+      <tr><td>연금보험</td><td>일을 그만둔 뒤의 생활비</td></tr>
+    </table>
+  </div>
+
+  <h2>나라가 운영하는 네 가지 보험</h2>
+  <div class="info">
+    <div class="iconrow four">
+      <div><span class="ic">👵</span><b>국민연금</b><small>노후</small></div>
+      <div><span class="ic">🏥</span><b>건강보험</b><small>병원비</small></div>
+      <div><span class="ic">🧑‍💼</span><b>고용보험</b><small>실직</small></div>
+      <div><span class="ic">🦺</span><b>산재보험</b><small>일하다 다침</small></div>
+    </div>
+    <p class="cap">월급에서 미리 빠져나가는 보험료가 이것입니다. 원해서 드는 것이 아니라 모두가 들어야 합니다.</p>
+  </div>
+
+  <h2>보험이 있는 마을과 없는 마을</h2>
+  <div class="game" data-game="village"></div>
 
   <h2>금융사기를 피하는 습관</h2>
   <ul class="list">
@@ -419,6 +788,7 @@
     <li>"원금 보장, 높은 수익"을 함께 약속하는 곳은 의심합니다.</li>
     <li>급하게 돈을 보내라는 연락은 끊고 직접 확인합니다.</li>
   </ul>
+  <div class="game" data-game="scam"></div>
 </section>
 
 <section class="ch" id="f5" data-part="2" data-title="세금">
@@ -431,6 +801,8 @@
     <dt>무임승차</dt><dd>값을 치르지 않고 혜택만 누리는 것입니다. 모두가 그렇게 하면 아무도 만들지 않게 됩니다.</dd>
     <dt>세금</dt><dd>나라와 지방자치단체가 공동으로 필요한 일에 쓰려고 걷는 돈입니다.</dd>
   </dl>
+
+  <div class="game" data-game="lamp"></div>
 
   <h2>세금의 종류</h2>
   <div class="card tablecard">
@@ -445,9 +817,116 @@
   <dl class="term">
     <dt>원천징수</dt><dd>월급을 줄 때 세금을 미리 떼고 나머지를 주는 방식입니다. 통장에 들어온 월급이 계약한 금액보다 적은 이유입니다.</dd>
   </dl>
+  <div class="info">
+    <h3>월급이 통장에 오기까지</h3>
+    <div class="payslip">
+      <div class="line l1"><span>계약한 월급</span><div class="track"><i style="--w:100%"></i></div><b>250만 원</b></div>
+      <div class="line l2"><span>세금·보험료</span><div class="track"><i style="--w:10%"></i></div><b>−25만 원</b></div>
+      <div class="line l3"><span>통장에 온 돈</span><div class="track"><i style="--w:90%"></i></div><b>225만 원</b></div>
+    </div>
+  </div>
 
   <h2>걷은 세금은</h2>
+  <div class="info">
+    <div class="iconrow">
+      <div><span class="ic">🏫</span><b>교육</b></div>
+      <div><span class="ic">🏥</span><b>복지·보건</b></div>
+      <div><span class="ic">🚒</span><b>안전</b></div>
+      <div><span class="ic">🛣️</span><b>도로·교통</b></div>
+      <div><span class="ic">🛡️</span><b>국방</b></div>
+      <div><span class="ic">🌳</span><b>환경</b></div>
+    </div>
+  </div>
   <p>정부가 예산을 세워 교육, 복지, 국방, 안전에 씁니다. 세금을 많이 걷으면 함께 쓰는 것이 늘지만 각자 쓸 수 있는 돈은 줄어듭니다.</p>
+</section>
+
+<section class="ch" id="t1" data-part="2" data-title="세금을 줄이는 제도">
+  <p class="kicker"></p>
+  <h1>세금을 줄이는 제도</h1>
+  <p class="lead">나라는 노후 준비, 저축, 기부, 지역 소비처럼 권하고 싶은 일에 세금을 깎아 줍니다. 알면 돌려받고 모르면 그냥 냅니다.</p>
+
+  <h2>연말정산</h2>
+  <p>월급에서는 세금을 어림해서 미리 뗍니다. 한 해가 끝나면 실제로 내야 할 세금을 다시 계산해, 더 냈으면 돌려받고 덜 냈으면 더 냅니다.</p>
+  <div class="info">
+    <div class="iconrow five">
+      <div><span class="ic">💼</span><b>번 돈</b><small>총급여</small></div>
+      <div><span class="ic">✂️</span><b>소득공제</b><small>세금 매길 소득을 줄임</small></div>
+      <div><span class="ic">✖️</span><b>세율</b><small>6%부터 단계별로</small></div>
+      <div><span class="ic">🎟️</span><b>세액공제</b><small>세금 자체를 줄임</small></div>
+      <div><span class="ic">🧾</span><b>낼 세금</b><small>미리 낸 세금과 비교</small></div>
+    </div>
+  </div>
+
+  <div class="grid g2">
+    <div class="card"><h3><span class="ico">✂️</span>소득공제 100만 원</h3><p>세금을 매기는 소득이 100만 원 줄어듭니다. 세율 15% 구간이면 세금은 15만 원 줄어듭니다.</p></div>
+    <div class="card"><h3><span class="ico">🎟️</span>세액공제 100만 원</h3><p>낼 세금에서 100만 원을 그대로 뺍니다.</p></div>
+  </div>
+
+  <h2>카드와 현금영수증</h2>
+  <div class="card tablecard">
+    <table>
+      <tr><th>쓴 방법</th><th class="num">소득공제율</th></tr>
+      <tr><td>신용카드</td><td class="num">15%</td></tr>
+      <tr><td>체크카드·현금영수증</td><td class="num">30%</td></tr>
+      <tr><td>전통시장·대중교통</td><td class="num">40%</td></tr>
+    </table>
+  </div>
+  <p>한 해 동안 쓴 돈이 총급여의 25%를 넘어야 하고, 넘은 금액에만 적용됩니다.</p>
+
+  <h2>연금저축과 IRP</h2>
+  <div class="grid g2">
+    <div class="card"><h3><span class="ico">🌱</span>연금저축</h3><p>누구나 만들 수 있는 노후 준비 계좌입니다. 한 해 600만 원까지 세액공제를 받습니다.</p></div>
+    <div class="card"><h3><span class="ico">🏦</span>IRP</h3><p>개인형 퇴직연금입니다. 퇴직금을 받는 계좌이기도 합니다. 연금저축과 합쳐 한 해 900만 원까지 세액공제를 받습니다.</p></div>
+  </div>
+  <div class="card tablecard">
+    <table>
+      <tr><th>총급여</th><th class="num">공제율</th><th class="num">900만 원을 넣으면</th></tr>
+      <tr><td>5,500만 원 이하</td><td class="num">16.5%</td><td class="num">148만 5천 원</td></tr>
+      <tr><td>5,500만 원 초과</td><td class="num">13.2%</td><td class="num">118만 8천 원</td></tr>
+    </table>
+  </div>
+  <div class="note">대신 <b>55세 이후에 연금으로</b> 받아야 합니다. 그 전에 깨면 공제받은 돈과 불어난 돈에 16.5%의 세금을 냅니다.</div>
+
+  <div class="game" data-game="taxback"></div>
+
+  <h2>ISA</h2>
+  <p>예금, 펀드, ETF, 주식을 한 계좌에 담는 개인종합자산관리계좌입니다. 계좌 안에서 번 것과 잃은 것을 합쳐 남은 이익에만 세금을 매깁니다.</p>
+  <div class="card tablecard">
+    <table>
+      <tr><th>항목</th><th>내용</th></tr>
+      <tr><td>넣을 수 있는 돈</td><td>한 해 2,000만 원, 모두 합쳐 1억 원</td></tr>
+      <tr><td>세금을 안 내는 이익</td><td>200만 원까지. 소득이 낮은 서민형은 400만 원까지</td></tr>
+      <tr><td>넘는 이익</td><td>9.9%만 따로 냅니다. 일반 계좌는 15.4%입니다.</td></tr>
+      <tr><td>유지 기간</td><td>3년 이상</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h3>3년 동안 이익이 500만 원 났다면</h3>
+    <div class="calc" style="margin-bottom:10px"><span class="box">일반 계좌</span><span class="op">500만 × 15.4% =</span><span class="box y">세금 77만 원</span></div>
+    <div class="calc"><span class="box">ISA</span><span class="op">(500만 − 200만) × 9.9% =</span><span class="box g">세금 29만 7천 원</span></div>
+  </div>
+
+  <h2>고향사랑기부제</h2>
+  <p>내가 사는 곳이 아닌 지방자치단체에 기부하면 세금을 깎아 주고 그 지역의 특산품을 답례로 줍니다. 한 해 2,000만 원까지 기부할 수 있습니다.</p>
+  <div class="card tablecard">
+    <table>
+      <tr><th>기부한 돈</th><th>세액공제</th></tr>
+      <tr><td>10만 원까지</td><td>전액</td></tr>
+      <tr><td>10만 원 초과 20만 원까지</td><td>44%</td></tr>
+      <tr><td>20만 원 초과</td><td>16.5%</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h3>10만 원을 기부하면</h3>
+    <div class="calc"><span class="box">기부 10만 원</span><span class="op">→</span><span class="box g">세금 10만 원 돌려받음</span><span class="op">+</span><span class="box y">답례품 3만 원어치</span></div>
+  </div>
+
+  <h2>지역사랑상품권</h2>
+  <p>지방자치단체가 발행하는 돈입니다. 그 지역의 가맹점에서만 쓸 수 있고, 살 때 할인을 받거나 쓴 뒤 일부를 돌려받습니다. 할인율은 지역과 시기에 따라 다릅니다. 쓴 금액은 연말정산에서 소득공제를 받습니다.</p>
+  <div class="grid g2">
+    <div class="card"><h3><span class="ico">🏘️</span>왜 만드는가</h3><p>쓸 수 있는 곳을 그 지역으로 묶어 돈이 동네 가게 안에서 돌게 합니다.</p></div>
+    <div class="card"><h3><span class="ico">🏫</span>교실로 옮기면</h3><p>우리 반 안에서만 쓰는 학급 화폐가 같은 원리입니다. 네오뱅크의 코인이 그것입니다.</p></div>
+  </div>
 </section>
 
 <!-- ================= 3부 ================= -->
@@ -461,10 +940,44 @@
 
   <h2>메뉴</h2>
   <div class="grid g4">
-    <div class="card"><h3>홈</h3><p>학급 금고, 학생 목록과 잔액, 최근 거래</p></div>
-    <div class="card"><h3>QR 결제</h3><p>입장용 QR 보여 주기, QR 스캔</p></div>
-    <div class="card"><h3>마켓</h3><p>상품 등록과 판매</p></div>
-    <div class="card"><h3>마이페이지</h3><p>뱃지 현황, 학급 정보, 주문 관리, 고급 기능, 설정</p></div>
+    <div class="card"><h3><span class="ico">🏠</span>홈</h3><p>학급 금고, 학생 목록과 잔액, 최근 거래</p></div>
+    <div class="card"><h3><span class="ico">🔳</span>QR 결제</h3><p>입장용 QR 보여 주기, QR 스캔</p></div>
+    <div class="card"><h3><span class="ico">🛍️</span>마켓</h3><p>상품 등록과 판매</p></div>
+    <div class="card"><h3><span class="ico">👤</span>마이페이지</h3><p>뱃지 현황, 학급 정보, 주문 관리, 고급 기능, 설정</p></div>
+  </div>
+
+  <h2>코인이 도는 길</h2>
+  <div class="info loop">
+    <svg viewBox="0 0 640 372" role="img" aria-label="금고에서 학생, 마켓, 세금을 거쳐 다시 금고로 도는 코인">
+      <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b6470"/></marker></defs>
+      <g stroke="#5b6470" stroke-width="2.5" fill="none" marker-end="url(#ar2)">
+        <path id="lp1" d="M394 80 Q526 88 540 160"/>
+        <path id="lp2" d="M540 232 Q526 304 394 312"/>
+        <path id="lp3" d="M246 312 Q114 304 100 232"/>
+        <path id="lp4" d="M100 160 Q114 88 246 80"/>
+        <path d="M288 6 L288 44"/>
+        <path d="M352 44 L352 6"/>
+      </g>
+      <circle r="7" fill="#f5b301"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#lp1"/></animateMotion></circle>
+      <circle r="7" fill="#f5b301"><animateMotion dur="2.4s" begin="-0.6s" repeatCount="indefinite"><mpath href="#lp2"/></animateMotion></circle>
+      <circle r="7" fill="#f5b301"><animateMotion dur="2.4s" begin="-1.2s" repeatCount="indefinite"><mpath href="#lp3"/></animateMotion></circle>
+      <circle r="7" fill="#f5b301"><animateMotion dur="2.4s" begin="-1.8s" repeatCount="indefinite"><mpath href="#lp4"/></animateMotion></circle>
+      <g font-size="15" font-weight="600" fill="#3b424c">
+        <text x="252" y="26" text-anchor="end">발행</text>
+        <text x="388" y="26">소각</text>
+        <text x="512" y="96">지급</text>
+        <text x="512" y="300">구매·송금</text>
+        <text x="128" y="300" text-anchor="end">세금 떼기</text>
+        <text x="128" y="96" text-anchor="end">세수</text>
+      </g>
+      <g font-size="19" font-weight="800" text-anchor="middle">
+        <rect x="250" y="48" width="140" height="64" rx="18" fill="#008cff"/><text x="320" y="87" fill="#fff">학급 금고</text>
+        <rect x="470" y="164" width="140" height="64" rx="18" fill="#e8f4ff"/><text x="540" y="203" fill="#0068c0">학생</text>
+        <rect x="250" y="280" width="140" height="64" rx="18" fill="#e9f9ef"/><text x="320" y="319" fill="#0f7a37">마켓·친구</text>
+        <rect x="30" y="164" width="140" height="64" rx="18" fill="#fff7d6"/><text x="100" y="203" fill="#8a6100">세금</text>
+      </g>
+    </svg>
+    <p class="cap">금고에서 나간 코인은 학생 사이를 돌다가 세금으로 다시 금고에 모입니다. 코인의 양을 바꾸는 것은 발행과 소각뿐입니다.</p>
   </div>
 
   <h2>경제 개념과 기능</h2>
@@ -482,6 +995,13 @@
     </table>
   </div>
   <p>주소는 <b>neobank.rewond.com</b>입니다. 컴퓨터, 태블릿, 휴대폰의 웹 브라우저에서 엽니다. 오른쪽 위 단추로 휴대폰 크기 화면과 넓은 화면을 바꿉니다.</p>
+</section>
+
+<section class="ch" id="nsim" data-part="3" data-title="학급 경제 미리 해 보기">
+  <p class="kicker"></p>
+  <h1>학급 경제 미리 해 보기</h1>
+  <p class="lead">네오뱅크의 단추를 누르기 전에, 여섯 명짜리 작은 학급에서 코인을 풀고 거두어 봅니다.</p>
+  <div class="game" data-game="classroom"></div>
 </section>
 
 <section class="ch" id="n2" data-part="3" data-title="학급 준비">
@@ -509,10 +1029,10 @@
   <div class="shot mid"><img src="img/nb-advanced.jpg" alt="고급 기능 화면"></div>
   <p><span class="ui">고급 모드</span>를 켜면 아래 네 가지를 하나씩 켜고 끌 수 있습니다.</p>
   <div class="grid g4">
-    <div class="card"><h3>학생 간 송금 승인</h3><p>학생끼리 보내는 돈을 선생님이 승인</p></div>
-    <div class="card"><h3>세금</h3><p>거래할 때마다 세금을 떼어 금고로</p></div>
-    <div class="card"><h3>뱃지 설정</h3><p>뱃지 획득 기준 변경</p></div>
-    <div class="card"><h3>거래 내역 내보내기</h3><p>거래 내역을 CSV 파일로</p></div>
+    <div class="card"><h3><span class="ico">🛡️</span>학생 간 송금 승인</h3><p>학생끼리 보내는 돈을 선생님이 승인</p></div>
+    <div class="card"><h3><span class="ico">🏛️</span>세금</h3><p>거래할 때마다 세금을 떼어 금고로</p></div>
+    <div class="card"><h3><span class="ico">🏅</span>뱃지 설정</h3><p>뱃지 획득 기준 변경</p></div>
+    <div class="card"><h3><span class="ico">📥</span>거래 내역 내보내기</h3><p>거래 내역을 CSV 파일로</p></div>
   </div>
 </section>
 
@@ -523,7 +1043,7 @@
 
   <div class="grid g2">
     <div class="card">
-      <h3>QR로 입장</h3>
+      <h3><span class="ico">📷</span>QR로 입장</h3>
       <ol class="steps">
         <li><span class="ui">QR 결제</span> 메뉴의 <span class="ui">내 QR</span>을 화면에 띄웁니다.</li>
         <li>학생이 기기 카메라로 QR을 스캔합니다.</li>
@@ -532,7 +1052,7 @@
       </ol>
     </div>
     <div class="card">
-      <h3>코드로 입장</h3>
+      <h3><span class="ico">🔢</span>코드로 입장</h3>
       <ol class="steps">
         <li>학생이 neobank.rewond.com에 접속합니다.</li>
         <li>여섯 자리 학급 코드를 입력합니다.</li>
@@ -569,6 +1089,7 @@
   </dl>
   <div class="card">
     <div class="calc"><span class="box">금고 129,090</span><span class="op">+</span><span class="box g">학생 보유 207,944</span><span class="op">=</span><span class="box y">통화량 337,034</span></div>
+    <div class="msbar" style="margin-top:14px"><i class="v" style="--w:38.3%">금고 38%</i><i class="s" style="--w:61.7%">학생 보유 62%</i></div>
   </div>
 
   <h2>단추</h2>
@@ -698,9 +1219,9 @@
   <h2>주문 관리</h2>
   <span class="path">홈 <i>›</i> 주문 &nbsp;또는&nbsp; 마이페이지 <i>›</i> 주문 관리</span>
   <div class="grid g3">
-    <div class="card"><h3>대기 중</h3><p>학생이 구매해서 처리를 기다리는 주문</p></div>
-    <div class="card"><h3>완료</h3><p>상품을 건네고 끝낸 주문</p></div>
-    <div class="card"><h3>반려</h3><p>줄 수 없어 돌려보낸 주문</p></div>
+    <div class="card"><h3><span class="ico">⏳</span>대기 중</h3><p>학생이 구매해서 처리를 기다리는 주문</p></div>
+    <div class="card"><h3><span class="ico">✅</span>완료</h3><p>상품을 건네고 끝낸 주문</p></div>
+    <div class="card"><h3><span class="ico">↩️</span>반려</h3><p>줄 수 없어 돌려보낸 주문</p></div>
   </div>
 </section>
 
@@ -710,8 +1231,8 @@
   <p class="lead">학생끼리 코인을 주고받습니다. 물건값을 치르거나 빌린 것을 갚을 때 씁니다.</p>
 
   <div class="grid g2">
-    <div class="card"><h3>검색으로 보내기</h3><p>친구 닉네임을 찾아 금액을 입력하고 보냅니다.</p></div>
-    <div class="card"><h3>QR로 보내기</h3><p>받는 사람이 자기 QR을 보여 주고, 보내는 사람이 스캔합니다.</p></div>
+    <div class="card"><h3><span class="ico">🔎</span>검색으로 보내기</h3><p>친구 닉네임을 찾아 금액을 입력하고 보냅니다.</p></div>
+    <div class="card"><h3><span class="ico">📷</span>QR로 보내기</h3><p>받는 사람이 자기 QR을 보여 주고, 보내는 사람이 스캔합니다.</p></div>
   </div>
 
   <h2>송금 승인</h2>
@@ -755,6 +1276,7 @@
   <div class="card">
     <h3>세율 10%일 때 100코인을 받으면</h3>
     <div class="calc"><span class="box">100코인</span><span class="op">→</span><span class="box g">받는 학생 90</span><span class="op">+</span><span class="box y">금고 10</span></div>
+    <div class="taxsplit" style="margin-top:14px"><div class="coins10"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="lab">동전 하나가 10코인입니다. 열 개 가운데 하나가 금고로 갑니다.</span></div>
     <p style="margin-top:12px">세액은 금액에 세율을 곱한 뒤 소수점 아래를 버립니다. 55코인이면 세금은 5코인입니다.</p>
   </div>
 
@@ -827,6 +1349,17 @@
   <h1>수업 순서</h1>
   <p class="lead">한 차시 안에서 네오뱅크를 쓰는 순서입니다.</p>
 
+  <div class="info">
+    <div class="iconrow six">
+      <div><span class="ic">🧰</span><b>준비</b></div>
+      <div><span class="ic">📷</span><b>입장</b></div>
+      <div><span class="ic">💼</span><b>소득</b></div>
+      <div><span class="ic">🛍️</span><b>시장</b></div>
+      <div><span class="ic">🏛️</span><b>세금</b></div>
+      <div><span class="ic">📒</span><b>정리</b></div>
+    </div>
+  </div>
+
   <div class="card tablecard">
     <table>
       <tr><th style="width:92px">단계</th><th>선생님</th><th>학생</th></tr>
@@ -867,6 +1400,21 @@
 </main>
 
 <div class="zoom"><img alt=""></div>
+<script src="games/core.js"></script>
+<script src="games/extra.js"></script>
+<script src="games/extra2.js"></script>
+<script src="games/extra3.js"></script>
+<script src="games/ration.js"></script>
+<script src="games/basket.js"></script>
+<script src="games/barter.js"></script>
+<script src="games/bakery.js"></script>
+<script src="games/printer.js"></script>
+<script src="games/merge.js"></script>
+<script src="games/month.js"></script>
+<script src="games/invest.js"></script>
+<script src="games/village.js"></script>
+<script src="games/scam.js"></script>
+<script src="games/lamp.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
