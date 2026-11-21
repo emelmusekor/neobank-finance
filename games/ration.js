@@ -3,7 +3,7 @@
   window.EcoGames = window.EcoGames || {};
   window.EcoGames["ration"] = function (root, ui) {
     var el = ui.el;
-    var BREAD = "🍞";
+    var BREAD = "🥐";
 
     /* 도착 순서, 낼 수 있는 값, 배고픈 정도가 서로 어긋나도록 정했다.
        먼저 온 순서: 가온·나래 / 값: 라온·다솜 / 배고픔: 마루·나래 */

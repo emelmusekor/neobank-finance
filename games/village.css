@@ -57,6 +57,17 @@
 .g-village .vl-table td.bad { color: var(--red); }
 .g-village .vl-short { color: #a12126; font-weight: 600; }
 
+/* 좁은 화면: 항목 이름을 한 줄로 올리고 두 마을 값을 나란히 둔다 */
+.g-village .vl-tablewrap { container-type: inline-size; }
+@container (max-width: 400px) {
+  .g-village .vl-table, .g-village .vl-table thead, .g-village .vl-table tbody { display: block; }
+  .g-village .vl-table tr { display: grid; grid-template-columns: 1fr 1fr; }
+  .g-village .vl-table thead th:first-child { display: none; }
+  .g-village .vl-table thead th.num, .g-village .vl-table td.num { text-align: center; }
+  .g-village .vl-table tbody th { grid-column: 1 / -1; border-bottom: 0; padding-bottom: 0; text-align: center; color: var(--sub); }
+  .g-village .vl-table td.num { font-size: 22px; white-space: nowrap; padding-top: 2px; }
+}
+
 @keyframes g-village-hit {
   0% { transform: scale(1); background-color: #e5484d; box-shadow: 0 0 0 0 rgba(229, 72, 77, 0.7); }
   30% { transform: scale(1.5); background-color: #ff3b42; box-shadow: 0 0 0 7px rgba(229, 72, 77, 0.35); }

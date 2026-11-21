@@ -245,6 +245,7 @@
         segs[k].classList.toggle("is-zero", p === 0);
         segs[k].textContent = p >= 30 ? INFO[k].name + " " + p : (p > 0 ? String(p) : "");
         if (Number(sliders[k].value) !== p) sliders[k].value = String(p);
+        sliders[k].style.setProperty("--p", String(p));
         sliders[k].disabled = locked;
         outs[k].textContent = p + "% · " + won(w * p / 100);
         label.push(INFO[k].name + " " + p + "%");

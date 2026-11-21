@@ -5,7 +5,7 @@
     var el = ui.el;
 
     var ITEMS = {
-      bread: { e: "🍞", n: "빵" },
+      bread: { e: "🥐", n: "빵" },
       clothes: { e: "👕", n: "옷" },
       fish: { e: "🐟", n: "생선" },
       apple: { e: "🍎", n: "사과" },

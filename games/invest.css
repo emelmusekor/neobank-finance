@@ -24,7 +24,17 @@
 .g-invest .iv-name small { font-size: 15px; color: var(--sub); font-weight: 600; }
 .g-invest .iv-dot { display: inline-block; width: 12px; height: 12px; border-radius: 4px; align-self: center; }
 .g-invest .iv-out { font-size: 16px; white-space: nowrap; }
-.g-invest .iv-range { height: 32px; touch-action: pan-y; }
+.g-invest .iv-range { --c: var(--blue); --p: 0; -webkit-appearance: none; appearance: none; height: 34px; margin: 0; background: transparent; touch-action: pan-y; }
+.g-invest .iv-r-dep { --c: var(--iv-dep); }
+.g-invest .iv-r-bond { --c: var(--iv-bond); }
+.g-invest .iv-r-stock { --c: var(--iv-stock); }
+.g-invest .iv-range::-webkit-slider-runnable-track { height: 10px; border-radius: 999px; background: linear-gradient(to right, var(--c) 0, var(--c) calc(14px + (100% - 28px) * var(--p) / 100), #e3e7ed calc(14px + (100% - 28px) * var(--p) / 100), #e3e7ed 100%); }
+.g-invest .iv-range::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 28px; height: 28px; margin-top: -9px; border-radius: 50%; background: #fff; border: 5px solid var(--c); box-shadow: 0 1px 4px rgba(20, 40, 80, 0.25); }
+.g-invest .iv-range::-moz-range-track { height: 10px; border-radius: 999px; background: #e3e7ed; }
+.g-invest .iv-range::-moz-range-progress { height: 10px; border-radius: 999px; background: var(--c); }
+.g-invest .iv-range::-moz-range-thumb { width: 18px; height: 18px; border-radius: 50%; background: #fff; border: 5px solid var(--c); box-shadow: 0 1px 4px rgba(20, 40, 80, 0.25); }
+.g-invest .iv-range:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 999px; }
+.g-invest .iv-range:disabled { opacity: 0.45; cursor: not-allowed; }
 
 .g-invest .iv-presets { display: grid; grid-template-columns: repeat(auto-fit, minmax(84px, 1fr)); gap: 8px; margin-top: 12px; }
 .g-invest .iv-preset { padding: 8px 8px; display: grid; gap: 1px; text-align: center; line-height: 1.3; }

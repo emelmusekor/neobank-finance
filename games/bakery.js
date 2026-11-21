@@ -191,7 +191,7 @@
       stage.innerHTML = "";
       stage.appendChild(el("div", { class: "bk-start" }, [
         el("div", { class: "bk-start-art", "aria-hidden": "true" }, [
-          el("span", { text: "🥖" }), el("span", { class: "bk-shop", text: "🥐" }), el("span", { text: "🍞" })
+          el("span", { text: "🥖" }), el("span", { class: "bk-shop", text: "🥐" }), el("span", { text: "🥐" })
         ]),
         el("div", { class: "gm-msg", text: "7일 동안 가격과 굽는 개수를 정해 이익을 가장 크게 만듭니다." }),
         el("ul", { class: "bk-rules" }, [
@@ -329,7 +329,7 @@
       var shelf = el("div", { class: "bk-shelf" });
       var breads = [];
       for (var j = 0; j < breadIcons; j++) {
-        var b = el("span", { class: "bk-bread", "aria-hidden": "true", text: "🍞" });
+        var b = el("span", { class: "bk-bread", "aria-hidden": "true", text: "🥐" });
         if (j < goneIcons) b.style.transitionDelay = Math.round(j * gap + walk * 0.8) + "ms";
         breads.push(b);
         shelf.appendChild(b);
@@ -356,7 +356,7 @@
         shelf,
         lane,
         caption,
-        el("p", { class: "bk-key", text: "🍞 하나는 빵 5개, 사람 하나는 손님 5명쯤입니다." })
+        el("p", { class: "bk-key", text: "🥐 하나는 빵 5개, 사람 하나는 손님 5명쯤입니다." })
       ]));
 
       ui.countUp(cCust, D, total);

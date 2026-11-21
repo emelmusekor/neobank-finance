@@ -57,14 +57,15 @@
     var dur = ms == null ? 600 : ms;
     var f = format || fmt;
     node.setAttribute("data-now", to);
+    var run = (node.__countRun = (node.__countRun || 0) + 1);
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || dur === 0) { node.textContent = f(to); return; }
     function step(t) {
+      if (node.__countRun !== run) return; /* 더 새로운 호출이 있으면 그만둔다 */
       if (start === null) start = t;
       var p = Math.min(1, (t - start) / dur);
       var e = 1 - Math.pow(1 - p, 3);
-      node.textContent = f(from + (to - from) * e);
-      if (p < 1 && node.getAttribute("data-now") == String(to)) requestAnimationFrame(step);
-      else if (p >= 1) node.textContent = f(to);
+      node.textContent = f(p >= 1 ? to : from + (to - from) * e);
+      if (p < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
