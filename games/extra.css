@@ -338,3 +338,43 @@
   .taxsplit .coins10 { flex-wrap: wrap; }
   .taxsplit .coins10 i { width: 24px; height: 24px; }
 }
+
+/* 쉽게 말하면 */
+.easy { background: var(--amber-soft); border-radius: 18px; padding: 14px 20px; margin: -14px 0 28px; font-size: 19px; font-weight: 600; color: #4a3600; line-height: 1.55; }
+.easy span { display: inline-block; font-size: 13px; font-weight: 800; background: #f5b301; color: #3d2c00; border-radius: 999px; padding: 2px 11px; margin-right: 10px; vertical-align: 2px; }
+.ch.play > .easy { animation: gm-fade-up 0.5s 0.16s both; }
+
+/* 실제로 있었던 일 */
+.case { display: grid; grid-template-columns: 76px 1fr; gap: 18px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; margin: 0 0 14px; position: relative; overflow: hidden; }
+.case::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: linear-gradient(180deg, var(--blue), var(--blue-2)); }
+.case .em { width: 76px; height: 76px; border-radius: 22px; background: var(--blue-soft); display: grid; place-items: center; font-size: 40px; }
+.case h3 { font-size: 20px; margin-bottom: 6px; }
+.case p { margin: 0 0 8px; font-size: 17px; }
+.case .pt { margin: 0; font-weight: 700; color: #0068c0; }
+.case .pt::before { content: "→ "; }
+
+/* 맞을까, 틀릴까 */
+.quiz { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; margin: 0 0 14px; }
+.quiz .q { font-size: 20px; font-weight: 700; margin: 0 0 14px; }
+.quiz .ox { display: flex; gap: 12px; }
+.quiz .ox button { flex: 1; max-width: 180px; font: inherit; font-size: 34px; font-weight: 800; line-height: 1; padding: 14px 0; border-radius: 18px; border: 2px solid var(--line); background: var(--bg); cursor: pointer; transition: transform 0.1s, background 0.15s, border-color 0.15s; touch-action: manipulation; }
+.quiz .ox button:hover { border-color: var(--blue); }
+.quiz .ox button:active { transform: scale(0.95); }
+.quiz .ox .o { color: var(--blue); }
+.quiz .ox .x { color: var(--red); }
+.quiz .ox button.right { background: var(--green-soft); border-color: var(--green); }
+.quiz .ox button.wrong { background: #ffecec; border-color: var(--red); }
+.quiz .ox button:disabled { cursor: default; opacity: 0.55; }
+.quiz .ox button.right:disabled, .quiz .ox button.wrong:disabled { opacity: 1; }
+.quiz .why { display: none; margin: 14px 0 0; font-size: 17px; padding: 12px 16px; border-radius: 14px; background: var(--bg); }
+.quiz.done .why { display: block; animation: gm-fade-up 0.35s both; }
+.quiz .why b { margin-right: 8px; }
+.quiz.ok .why b { color: var(--green); }
+.quiz.no .why b { color: var(--red); }
+
+@media (max-width: 1000px) {
+  .easy { font-size: 17px; }
+  .case { grid-template-columns: 1fr; gap: 10px; padding: 18px; }
+  .case .em { width: 60px; height: 60px; font-size: 30px; }
+  .quiz .q { font-size: 18px; }
+}
