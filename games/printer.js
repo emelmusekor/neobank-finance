@@ -34,7 +34,7 @@
   var TALK = [
     [function () { return "빵값이 처음보다 쌉니다."; }, function () { return "같은 돈으로 빵을 더 많이 삽니다."; }],
     [function (p, f) { return "빵 한 개에 " + f(p) + "원입니다."; }, function () { return "장보기가 평소와 같습니다."; }],
-    [function () { return "빵값이 올랐습니다."; }, function () { return "지난번보다 빵이 비쌉니다."; }],
+    [function () { return "빵값이 처음보다 올랐습니다."; }, function () { return "같은 돈으로 살 수 있는 빵이 줄었습니다."; }],
     [timesLine, function () { return "같은 돈으로 살 수 있는 빵이 절반 이하로 줄었습니다."; }],
     [timesLine, function () { return "모아 둔 돈의 값어치가 떨어졌습니다."; }, function () { return "가게마다 값표를 다시 씁니다."; }],
     [function () { return "월급을 받아도 빵을 못 삽니다."; }, timesLine, function () { return "모아 둔 돈으로 살 수 있는 것이 크게 줄었습니다."; }]
@@ -42,18 +42,19 @@
 
   /* 빵값 꺾은선: draw(값 배열, 가로 칸 수) */
   function makeSpark(ui, mode) {
-    var W = 300, H = 76, PX = 7, PT = 9, PB = 6;
+    var W = 300, H = 84, PX = 7, PT = 9, PB = 6;
     var el = ui.el;
     var wrap = el("div", { class: "pr-spark" });
     var box = el("div", { class: "pr-sp-plot" });
     box.innerHTML =
-      '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="빵값의 움직임">' +
+      '<svg viewBox="0 0 ' + W + " " + H + '" preserveAspectRatio="none" role="img" aria-label="빵값의 움직임">' +
       '<line class="pr-sp-base" x1="0" x2="' + W + '" y1="' + (H - PB) + '" y2="' + (H - PB) + '"/>' +
       '<line class="pr-sp-ref" x1="0" x2="' + W + '"/>' +
       '<path class="pr-sp-area"/><polyline class="pr-sp-line"/>' +
       '<line class="pr-sp-cross" y1="' + PT + '" y2="' + (H - PB) + '"/>' +
       '<circle class="pr-sp-dot" r="4.5"/></svg>';
     var svg = box.firstChild;
+    var base = svg.querySelector(".pr-sp-base");
     var ref = svg.querySelector(".pr-sp-ref");
     var area = svg.querySelector(".pr-sp-area");
     var line = svg.querySelector(".pr-sp-line");
@@ -72,6 +73,13 @@
     function draw(values, n) {
       if (values) { data = values; slots = Math.max(2, n || values.length); }
       if (!data.length) return;
+      var cw = box.clientWidth;
+      if (cw > 0 && cw !== W) {
+        W = cw;
+        svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+        base.setAttribute("x2", W);
+        ref.setAttribute("x2", W);
+      }
       var top = 250, peak = 0, i;
       for (i = 0; i < data.length; i++) { if (data[i] > peak) peak = data[i]; }
       if (peak * 1.15 > top) top = peak * 1.15;
@@ -113,6 +121,7 @@
     svg.addEventListener("pointermove", pick);
     svg.addEventListener("pointerleave", release);
     svg.addEventListener("pointercancel", release);
+    if (window.ResizeObserver) new ResizeObserver(function () { draw(); }).observe(box);
 
     return { node: wrap, draw: draw };
   }
@@ -164,12 +173,14 @@
     }
     function levelTalk(p) {
       var lines = TALK[S.level];
-      setTalk(lines[S.talkIdx % lines.length](p, fmt), S.level >= 5 ? "hot" : S.level >= 3 ? "warm" : "");
+      S.line = lines[S.talkIdx % lines.length];
+      setTalk(S.line(p, fmt), S.level >= 5 ? "hot" : S.level >= 3 ? "warm" : "");
     }
-    function fallTalk(p) {
+    function fallTalk() {
       S.fallHold = 3;
       S.talkAcc = 0;
-      setTalk("빵값이 " + fmt(p) + "원으로 내렸습니다.", "down");
+      S.line = null;
+      setTalk("빵값이 내렸습니다.", "down");
     }
 
     /* ---------- 임무 ---------- */
@@ -199,6 +210,8 @@
         S.talkAcc = 0;
         S.talkIdx++;
         levelTalk(p);
+      } else if (S.line && S.fallHold <= 0) {
+        put(N.talkText, S.line(p, fmt));   // 배수가 들어간 말은 지금 값에 맞춘다
       }
       checkMissions(p);
     }
@@ -232,7 +245,7 @@
       if (built) {
         drawShops(true);
         ui.replay(N.q, "is-pop");
-        if (price() < before) fallTalk(price());
+        if (price() < before) fallTalk();
       }
       settle();
       render(false);
@@ -249,8 +262,8 @@
     function render(snap) {
       if (snap || still() || S.over) S.shown = S.M;
       else {
-        S.shown += (S.M - S.shown) * 0.45;
-        if (Math.abs(S.M - S.shown) < 1) S.shown = S.M;
+        S.shown += (S.M - S.shown) * 0.5;
+        if (Math.abs(S.M - S.shown) < 20) S.shown = S.M;
       }
       var m = Math.round(S.shown);
       var p = priceOf(m, S.Q);
@@ -299,7 +312,7 @@
       put(N.miSub[2], S.done[2] ? "마쳤습니다." : "지금 " + fmt(S.Q) + "개입니다.");
       put(N.miSub[3], S.done[3] ? "마쳤습니다." : (S.done[0] && S.done[2] ? "" : "①②③을 마친 뒤 확인합니다. ") + "지금 " + fmt(p) + "원입니다.");
 
-      N.spark.draw(S.win, SLOTS);
+      N.spark.draw(S.win, Math.max(15, Math.min(SLOTS, S.win.length)));
     }
 
     /* ---------- 움직임 ---------- */
@@ -362,7 +375,7 @@
         ui.replay(N.m, "is-shake");
       }
       var p = price();
-      if (p < before) fallTalk(p);
+      if (p < before) fallTalk();
       settle();
       if (!S.over) render(false);
     }
@@ -428,7 +441,7 @@
       S = {
         M: M0, Q: Q0, shown: M0, printers: 0, build: null, peak: P0, noted: 0,
         done: [false, false, false, false], over: false, acted: false,
-        last: Date.now(), secAcc: 0, talkAcc: 0, talkIdx: 0, level: levelOf(P0), fallHold: 0, face: -1, lit: -1,
+        last: Date.now(), secAcc: 0, talkAcc: 0, talkIdx: 0, level: levelOf(P0), fallHold: 0, face: -1, lit: -1, line: null,
         win: [P0], all: [P0]
       };
       N = { mi: [], miSub: [] };
@@ -466,7 +479,7 @@
 
       N.loaves = el("b", { text: "100.0개" });
       N.basket = el("div", { class: "pr-basket", "aria-hidden": "true" });
-      for (var i = 0; i < 20; i++) N.basket.appendChild(el("i", { text: "🍞" }));
+      for (var i = 0; i < 20; i++) N.basket.appendChild(el("i", { text: "🥐" }));
       var buyBox = el("div", { class: "pr-box pr-buy" }, [
         el("span", { text: "1만 원으로 살 수 있는 빵" }),
         N.loaves,
@@ -501,7 +514,6 @@
         buyBox,
         prodBox
       ]);
-      N.grid = el("div", { class: "pr-grid" }, [bank, town]);
 
       /* 임무 */
       var titles = [
@@ -525,13 +537,12 @@
       ]);
       N.result = el("div", { class: "gm-result pr-result gm-hide" });
 
-      N.wrap = el("div", { class: "pr-wrap" }, [
-        N.goal,
-        N.grid,
-        el("div", { class: "pr-missionbox" }, [el("div", { class: "pr-cap", text: "임무" }), list]),
-        N.result,
-        N.foot
+      N.grid = el("div", { class: "pr-grid" }, [
+        bank,
+        town,
+        el("div", { class: "pr-panel pr-missionbox" }, [el("div", { class: "pr-cap", text: "✅ 임무" }), list])
       ]);
+      N.wrap = el("div", { class: "pr-wrap" }, [N.goal, N.grid, N.result, N.foot]);
       body.appendChild(N.wrap);
 
       drawShops(false);

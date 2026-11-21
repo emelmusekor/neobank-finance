@@ -7,7 +7,7 @@
     null,
     { name: "밀", obj: "밀을", icon: "🌾", price: 1 },
     { name: "반죽", obj: "반죽을", icon: "🥣", price: 3 },
-    { name: "식빵", obj: "식빵을", icon: "🍞", price: 8 },
+    { name: "빵", obj: "빵을", icon: "🥖", price: 8 },
     { name: "샌드위치", obj: "샌드위치를", icon: "🥪", price: 20 },
     { name: "케이크", obj: "케이크를", icon: "🎂", price: 50 },
     { name: "빵집", obj: "빵집을", icon: "🏪", price: 130 }
@@ -96,7 +96,7 @@
         el("span", { class: "mg-name", text: T.name }),
         el("span", { class: "mg-price", text: String(T.price) })
       ]);
-      if (delay) item.style.animationDelay = delay + "ms";
+      if (delay && !still()) item.style.animationDelay = delay + "ms";
       c.appendChild(item);
       c.setAttribute("aria-label", T.name + ", 판매가 " + T.price + "코인");
     }
