@@ -158,7 +158,7 @@
   100% { left: 100%; filter: grayscale(1); opacity: 0; }
 }
 
-@media (max-width: 520px) {
+@container page (max-width: 520px) {
   .g-bakery .bk-stats .gm-stat { padding: 9px 12px; }
   .g-bakery .bk-stats .gm-stat b { font-size: 22px; }
   .g-bakery .bk-total-num { font-size: 32px; }

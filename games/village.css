@@ -79,7 +79,7 @@
   100% { box-shadow: 0 0 0 9px rgba(0, 140, 255, 0); transform: scale(1); }
 }
 
-@media (max-width: 1000px) {
+@container page (max-width: 1000px) {
   .g-village .gm-stat b { font-size: 22px; }
   .g-village .vl-village { padding: 12px; }
   .g-village .vl-vstats .gm-stat { padding: 8px 10px; }

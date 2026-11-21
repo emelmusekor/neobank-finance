@@ -103,7 +103,7 @@
 .g-lamp .lp-final .lp-allrow th, .g-lamp .lp-final .lp-allrow td { background: var(--bg); border-top: 2px solid var(--line); }
 .g-lamp .lp-final .lp-allrow td.num { font-size: 22px; }
 
-@media (max-width: 1000px) {
+@container page (max-width: 1000px) {
   .g-lamp .gm-stat b { font-size: 22px; }
   .g-lamp .gm-stat { padding: 10px 12px; }
   .g-lamp .lp-houses { font-size: 28px; }

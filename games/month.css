@@ -154,7 +154,7 @@
 
 @keyframes g-month-bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 
-@media (max-width: 520px) {
+@container page (max-width: 520px) {
   .g-month .mo-stats .gm-stat { padding: 9px 10px; }
   .g-month .mo-stats .gm-stat b { font-size: 22px; }
   .g-month .mo-stats .gm-stat { flex-basis: 100px; }

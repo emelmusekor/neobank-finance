@@ -242,7 +242,7 @@
 
   <div class="pair">
     <div class="card" style="margin:0">
-      <svg viewBox="0 0 420 300" role="img" aria-label="수요곡선과 공급곡선이 만나는 균형">
+      <svg class="sdchart" viewBox="0 0 420 300" role="img" aria-label="수요곡선과 공급곡선이 만나는 균형">
         <line x1="50" y1="250" x2="395" y2="250" stroke="#1a1d21" stroke-width="2"/>
         <line x1="50" y1="250" x2="50" y2="22" stroke="#1a1d21" stroke-width="2"/>
         <text x="395" y="274" text-anchor="end" font-size="14" fill="#5b6470">수량</text>
@@ -255,7 +255,7 @@
         <text x="372" y="240" text-anchor="end" font-size="16" font-weight="700" fill="#008cff">수요</text>
         <text x="372" y="50" text-anchor="end" font-size="16" font-weight="700" fill="#16a34a">공급</text>
         <text x="236" y="143" font-size="16" font-weight="700" fill="#1a1d21">균형</text>
-        <text x="42" y="143" text-anchor="end" font-size="13" fill="#5b6470">균형가격</text>
+        <text x="58" y="130" font-size="13" fill="#5b6470">균형가격</text>
         <text x="220" y="270" text-anchor="middle" font-size="13" fill="#5b6470">균형거래량</text>
       </svg>
     </div>
@@ -352,7 +352,7 @@
   <p class="easy"><span>쉽게 말하면</span>내가 떡볶이값으로 낸 돈은 분식집 사장님의 소득이 되고, 그 돈은 다시 시장으로 갑니다.</p>
 
   <div class="card">
-    <svg viewBox="0 0 640 360" role="img" aria-label="가계, 기업, 정부, 은행 사이의 돈의 흐름">
+    <svg class="flow" viewBox="0 0 640 360" role="img" aria-label="가계, 기업, 정부, 은행 사이의 돈의 흐름">
       <defs>
         <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b6470"/></marker>
       </defs>
@@ -1088,7 +1088,7 @@
 
   <h2>코인이 도는 길</h2>
   <div class="info loop">
-    <svg viewBox="0 0 640 372" role="img" aria-label="금고에서 학생, 마켓, 세금을 거쳐 다시 금고로 도는 코인">
+    <svg class="flow" viewBox="0 0 640 372" role="img" aria-label="금고에서 학생, 마켓, 세금을 거쳐 다시 금고로 도는 코인">
       <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5b6470"/></marker></defs>
       <g stroke="#5b6470" stroke-width="2.5" fill="none" marker-end="url(#ar2)">
         <path id="lp1" d="M394 80 Q526 88 540 160"/>
@@ -1240,11 +1240,11 @@
   <div class="card tablecard">
     <table>
       <tr><th>위치</th><th>단추</th><th>하는 일</th></tr>
-      <tr><td rowspan="3">파란 상자</td><td><span class="ui">발행</span></td><td>학급 금고 화면으로 가서 코인을 새로 만듭니다.</td></tr>
-      <tr><td><span class="ui">지급</span></td><td>여러 학생에게 한 번에 지급합니다.</td></tr>
-      <tr><td><span class="ui">주문</span></td><td>마켓 주문을 처리합니다.</td></tr>
-      <tr><td rowspan="2">학생 목록</td><td>학생 이름</td><td>그 학생의 관리 창을 엽니다.</td></tr>
-      <tr><td><span class="ui">지급</span></td><td>그 학생 한 명에게 바로 지급합니다.</td></tr>
+      <tr><td>파란 상자</td><td><span class="ui">발행</span></td><td>학급 금고 화면으로 가서 코인을 새로 만듭니다.</td></tr>
+      <tr><td>파란 상자</td><td><span class="ui">지급</span></td><td>여러 학생에게 한 번에 지급합니다.</td></tr>
+      <tr><td>파란 상자</td><td><span class="ui">주문</span></td><td>마켓 주문을 처리합니다.</td></tr>
+      <tr><td>학생 목록</td><td>학생 이름</td><td>그 학생의 관리 창을 엽니다.</td></tr>
+      <tr><td>학생 목록</td><td><span class="ui">지급</span></td><td>그 학생 한 명에게 바로 지급합니다.</td></tr>
       <tr><td>최근 거래</td><td><span class="ui">더보기</span></td><td>전체 거래 내역을 엽니다.</td></tr>
     </table>
   </div>
